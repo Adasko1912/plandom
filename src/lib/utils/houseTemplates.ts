@@ -1,4 +1,5 @@
 import type { Project, Floor, Wall, Door, Window, FurnitureItem } from '$lib/models/types';
+import { polishHouseTemplates } from './polishTemplates';
 
 function uid(): string {
   return Math.random().toString(36).slice(2, 10);
@@ -335,6 +336,8 @@ function createLShaped(): Project {
 }
 
 export const houseTemplates: HouseTemplate[] = [
+  // Polish starter plans first: PlanDom targets Polish homes.
+  ...polishHouseTemplates,
   {
     name: 'Studio Apartment',
     description: 'Open plan living/kitchen, bathroom, closet',

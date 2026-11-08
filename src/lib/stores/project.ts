@@ -1,5 +1,6 @@
 import { selectionRotation } from '$lib/utils/selectionRotation';
 import { locale, translate } from '$lib/i18n';
+import { newWallSize, projectSettings } from '$lib/stores/settings';
 import { splitWallRoomReferences } from '$lib/utils/splitWallRooms';
 import { splitWallGeometry } from '$lib/utils/splitWallGeometry';
 import { wallPathProfile } from '$lib/utils/wallProfiles';
@@ -303,12 +304,16 @@ function mutate(fn: (floor: Floor) => void, description?: string, coalesceKey?: 
 
 const samePoint = (a: Point, b: Point) => a.x === b.x && a.y === b.y;
 
-export function addWall(start: Point, end: Point): string {
+/** New walls take the chosen wall type and height unless the caller passes explicit sizes. */
+export function addWall(start: Point, end: Point, size: { thickness?: number; height?: number } = {}): string {
   const id = uid();
+  const preset = newWallSize(get(projectSettings));
+  const thickness = size.thickness ?? preset.thickness;
+  const height = size.height ?? preset.height;
   mutate((f) => {
     // Copy the coordinates: the canvas passes magnet-snap results (with snappedTo* flags) and
     // reuses one point for the next wall's start; the model keeps plain, independent points.
-    f.walls.push({ id, start: { x: start.x, y: start.y }, end: { x: end.x, y: end.y }, thickness: 15, height: 280, startHeight: 280, endHeight: 280, color: '#444444' });
+    f.walls.push({ id, start: { x: start.x, y: start.y }, end: { x: end.x, y: end.y }, thickness, height, startHeight: height, endHeight: height, color: '#444444' });
   }, 'Added wall');
   if (typeof window !== 'undefined') {
     import('$lib/stores/onboarding.svelte').then(m => m.triggerTip('first-wall', end.x > 400 ? 300 : end.x + 20, 120)).catch(() => {});

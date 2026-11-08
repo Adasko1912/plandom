@@ -79,7 +79,7 @@ export const roomPresets: RoomPreset[] = [
   },
 ];
 
-export function placePreset(preset: RoomPreset, origin: Point, w = 400, h = 300): void {
+export function placePreset(preset: RoomPreset, origin: Point, w = 400, h = 300, size: { thickness?: number } = {}): void {
   const walls = preset.getWalls(w, h);
   // Compute bounding box center so preset is centered on drop point
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
@@ -97,7 +97,8 @@ export function placePreset(preset: RoomPreset, origin: Point, w = 400, h = 300)
   for (const wall of walls) {
     addWall(
       { x: origin.x + wall.start.x - cx, y: origin.y + wall.start.y - cy },
-      { x: origin.x + wall.end.x - cx, y: origin.y + wall.end.y - cy }
+      { x: origin.x + wall.end.x - cx, y: origin.y + wall.end.y - cy },
+      size,
     );
   }
   endUndoGroup();

@@ -3,7 +3,7 @@
   import { onDestroy } from 'svelte';
   import { locale, t, type Locale, type TranslationKey } from '$lib/i18n';
   import { modalDialog } from '$lib/utils/modalDialog';
-  import { projectSettings } from '$lib/stores/settings';
+  import { defaultProjectSettings, projectSettings, validWallHeightSetting, MIN_WALL_HEIGHT, MAX_WALL_HEIGHT } from '$lib/stores/settings';
   import type { ProjectSettings } from '$lib/stores/settings';
   import { currentProject, updateProjectDescription, updateProjectName } from '$lib/stores/project';
   import type { Project } from '$lib/models/types';
@@ -61,19 +61,13 @@
 
   let currentTheme = $state<ThemePreference>('system');
   onDestroy(themePreference.subscribe((t) => { currentTheme = t; }));
-  let settings = $state<ProjectSettings>({
-    units: 'metric',
-    showDimensions: true,
-    showExternalDimensions: true,
-    showInternalDimensions: false,
-    showExtensionLines: true,
-    showObjectDistance: true,
-    dimensionLineColor: '#1e293b',
-    wallMeasureMode: 'centerline',
-    snapToGrid: true,
-    snapToWalls: true,
-    gridSize: 25,
-  });
+  let settings = $state<ProjectSettings>(defaultProjectSettings());
+  /** Out-of-range or empty input restores the stored height instead of saving it. */
+  function commitWallHeight(input: HTMLInputElement) {
+    const value = Number(input.value);
+    if (input.value.trim() !== '' && validWallHeightSetting(value)) updateSetting('wallHeight', value);
+    else input.value = String(settings.wallHeight);
+  }
 
   onDestroy(projectSettings.subscribe((s) => { settings = { ...s }; }));
 
@@ -171,6 +165,20 @@
               />
             </label>
           </div>
+
+          <!-- Height given to newly drawn walls; existing walls keep their own heights -->
+          <label class="flex items-center justify-between mb-5">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300" title={$t('settings.wallHeightHelp')}>{$t('settings.wallHeight')}</span>
+            <input
+              type="number"
+              min={MIN_WALL_HEIGHT}
+              max={MAX_WALL_HEIGHT}
+              step="1"
+              value={settings.wallHeight}
+              onchange={(e) => commitWallHeight(e.currentTarget)}
+              class="w-24 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-2 py-1.5 text-sm text-right"
+            />
+          </label>
 
           <!-- Metrics Unit Toggle -->
           <div class="flex items-center justify-between mb-5">

@@ -12,6 +12,29 @@ export interface ProjectSettings {
   snapToGrid: boolean;                   // snap elements to grid when dragging
   snapToWalls: boolean;                  // snap furniture to nearby walls when dragging
   gridSize: number;                      // grid snap size in cm (default 25)
+  wallPreset: WallPreset;                // thickness of newly drawn walls
+  wallHeight: number;                    // height of newly drawn walls in cm
+}
+
+/** Polish construction defaults: exterior masonry with insulation, load-bearing, partition. */
+export type WallPreset = 'exterior' | 'loadBearing' | 'partition';
+export const WALL_PRESET_THICKNESS: Readonly<Record<WallPreset, number>> = { exterior: 44, loadBearing: 25, partition: 12 };
+export const WALL_PRESETS = Object.keys(WALL_PRESET_THICKNESS) as WallPreset[];
+/** Storey height; with the 300 cm floor spacing this leaves 30 cm for the slab and floor layers. */
+export const DEFAULT_WALL_HEIGHT = 270;
+export const MIN_WALL_HEIGHT = 200;
+export const MAX_WALL_HEIGHT = 600;
+
+const isWallPreset = (value: unknown): value is WallPreset => typeof value === 'string' && Object.hasOwn(WALL_PRESET_THICKNESS, value);
+export const validWallHeightSetting = (value: unknown): value is number =>
+  typeof value === 'number' && Number.isFinite(value) && value >= MIN_WALL_HEIGHT && value <= MAX_WALL_HEIGHT;
+
+/** Thickness and height a newly drawn wall receives. */
+export function newWallSize(settings: Pick<ProjectSettings, 'wallPreset' | 'wallHeight'>): { thickness: number; height: number } {
+  return {
+    thickness: WALL_PRESET_THICKNESS[isWallPreset(settings.wallPreset) ? settings.wallPreset : 'exterior'],
+    height: validWallHeightSetting(settings.wallHeight) ? settings.wallHeight : DEFAULT_WALL_HEIGHT,
+  };
 }
 
 const defaultSettings: ProjectSettings = {
@@ -26,14 +49,25 @@ const defaultSettings: ProjectSettings = {
   snapToGrid: true,
   snapToWalls: true,
   gridSize: 25,
+  wallPreset: 'exterior',
+  wallHeight: DEFAULT_WALL_HEIGHT,
 };
 
-// Load from localStorage if available
+export function defaultProjectSettings(): ProjectSettings {
+  return { ...defaultSettings };
+}
+
+// Load from localStorage if available; settings saved before a field existed get its default.
 function loadSettings(): ProjectSettings {
   if (typeof window === 'undefined') return { ...defaultSettings };
   try {
     const saved = localStorage.getItem('o3d_settings');
-    if (saved) return { ...defaultSettings, ...JSON.parse(saved) };
+    if (saved) {
+      const merged: ProjectSettings = { ...defaultSettings, ...JSON.parse(saved) };
+      if (!isWallPreset(merged.wallPreset)) merged.wallPreset = defaultSettings.wallPreset;
+      if (!validWallHeightSetting(merged.wallHeight)) merged.wallHeight = defaultSettings.wallHeight;
+      return merged;
+    }
   } catch {}
   return { ...defaultSettings };
 }

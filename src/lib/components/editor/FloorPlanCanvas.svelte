@@ -29,7 +29,7 @@
   import { roomTemplates, placeRoomTemplate } from '$lib/utils/roomTemplates';
   import { openingDropTarget } from '$lib/utils/openingDrop';
   import { getWallTextureCanvas, getFloorTextureCanvas, setTextureLoadCallback } from '$lib/utils/textureGenerator';
-  import { projectSettings, formatLength, formatArea } from '$lib/stores/settings';
+  import { projectSettings, formatLength, formatArea, defaultProjectSettings, newWallSize } from '$lib/stores/settings';
   import type { ProjectSettings } from '$lib/stores/settings';
   import { snapStatus } from '$lib/utils/snapStep';
   import { angleSnapWithin, resizeFurnitureFromHandle, snap as _snap, type CanvasState } from '$lib/utils/canvasInteraction';
@@ -153,12 +153,7 @@
   // Shared with the plan exports: Room Labels is a layer switch, Automatic dimensions is Settings → Dimensions → Dimensions.
   let showRoomLabels = $derived(layerVis.roomLabels);
   let showDimensions = $state(true);
-  let dimSettings: ProjectSettings = $state({
-    units: 'metric', showDimensions: true, showExternalDimensions: true,
-    showInternalDimensions: false, showExtensionLines: true,
-    showObjectDistance: true, dimensionLineColor: '#1e293b',
-    wallMeasureMode: 'centerline', snapToGrid: true, snapToWalls: true, gridSize: 25,
-  });
+  let dimSettings: ProjectSettings = $state(defaultProjectSettings());
   onDestroy(projectSettings.subscribe((s) => {
     dimSettings = s;
     showDimensions = s.showDimensions;
@@ -1500,7 +1495,8 @@
       const dx = e.x - s.x, dy = e.y - s.y;
       const len = Math.hypot(dx, dy);
       if (len > 1) {
-        const thickness = Math.max(20 * zoom, 4);
+        // Preview the thickness the wall will actually get from the chosen wall type.
+        const thickness = Math.max(newWallSize(dimSettings).thickness * zoom, 4);
         const nx = (-dy / len) * thickness / 2;
         const ny = (dx / len) * thickness / 2;
         ctx.fillStyle = '#3b82f620';

@@ -1,6 +1,7 @@
 import type { Point } from '$lib/models/types';
 import type { RoomPreset } from './roomPresets';
 import { placePreset } from './roomPresets';
+import { WALL_PRESET_THICKNESS } from '$lib/stores/settings';
 import { addFurniture, rotateFurniture, beginUndoGroup, endUndoGroup } from '$lib/stores/project';
 
 export interface FurniturePlacement {
@@ -98,7 +99,9 @@ export function placeRoomTemplate(
 ): void {
   beginUndoGroup();
   try {
-    placePreset(preset, origin, w, h);
+    // Furnished layouts are interior rooms planned against partition walls; thick exterior
+    // walls would push the furniture into the wall faces.
+    placePreset(preset, origin, w, h, template ? { thickness: WALL_PRESET_THICKNESS.partition } : {});
     for (const item of template?.furniture ?? []) {
       const id = addFurniture(item.catalogId, {
         x: origin.x + item.x, y: origin.y + item.y,
