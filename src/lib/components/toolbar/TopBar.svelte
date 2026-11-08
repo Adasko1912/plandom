@@ -25,6 +25,7 @@
   import { exportAsJSON } from '$lib/utils/export';
   import { createProjectFromRoomPlan, extractRoomJsonFromZip, isRoomPlanJson } from '$lib/utils/roomplanImport';
   import SettingsDialog from './SettingsDialog.svelte';
+  import ShareDialog from '$lib/components/share/ShareDialog.svelte';
   import AreaSummaryPanel from '$lib/components/sidebar/AreaSummaryPanel.svelte';
   import { saveState, saveError, lastSavedAt, manualSave, autoSave, initAutoSave } from '$lib/stores/saveStatus';
   import { initVersionHistory, stopVersionHistory, snapshotOnAction } from '$lib/stores/versionHistory';
@@ -49,6 +50,7 @@
   let activeFloorId = $state('');
   let editingName = $state(false);
   let exportOpen = $state(false);
+  let shareOpen = $state(false);
   import { triggerTip } from '$lib/stores/onboarding.svelte';
   let exportRef: HTMLDivElement;
   // Mobile (< md) overflow menu for secondary actions
@@ -583,6 +585,7 @@
         <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left" onclick={() => { versionHistoryOpen = true; moreOpen = false; }}>{$t('versions.title')}</button>
         <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left" onclick={() => { areaOpen = true; moreOpen = false; }}>{$t('areaSummary.title')}</button>
         <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left" onclick={() => { settingsOpen = true; moreOpen = false; }}>{$t('settings.title')}</button>
+        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left" onclick={() => { shareOpen = true; moreOpen = false; }}>{$t('share.title')}</button>
         <a href={USER_GUIDE_URL} target="_blank" rel="noopener" class="block w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left" onclick={() => { moreOpen = false; }}>{$t('help.userGuide')}</a>
       </div>
     {/if}
@@ -591,6 +594,15 @@
   <div class="h-5 w-px bg-white/20 max-xl:hidden"></div>
 
   <!-- Export dropdown -->
+  <button
+    onclick={() => shareOpen = true}
+    class="px-3 py-1.5 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded transition-colors flex items-center gap-1.5 max-xl:hidden"
+    title={$t('share.hint')}
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+    <span>{$t('share.title')}</span>
+  </button>
+
   <div class="relative" bind:this={exportRef}>
     <button
       onclick={() => { exportOpen = !exportOpen; if (exportOpen) triggerTip('first-export', 300, 60); }}
@@ -696,6 +708,7 @@
 {/if}
 
 <SettingsDialog bind:open={settingsOpen} />
+<ShareDialog bind:open={shareOpen} />
 <VersionHistoryPanel bind:open={versionHistoryOpen} />
 
 {#if areaOpen}

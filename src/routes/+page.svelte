@@ -10,6 +10,9 @@
   import { openProject } from '$lib/services/projectOpening';
   import { createDefaultProject } from '$lib/stores/project';
   import WelcomeScreen from '$lib/components/WelcomeScreen.svelte';
+  import { cloudConfigured, hasStoredSession } from '$lib/cloud/config';
+  const cloud = cloudConfigured();
+  const signedIn = cloud && hasStoredSession();
   import LibraryRestoreDialog from '$lib/components/LibraryRestoreDialog.svelte';
   import ProjectPackageDialog from '$lib/components/ProjectPackageDialog.svelte';
   import LibraryStorageNote from '$lib/components/LibraryStorageNote.svelte';
@@ -177,6 +180,9 @@
         <p class="text-sm text-white/50 mt-0.5">{loading ? $t('library.loading') : $t(projects.length === 1 ? 'library.countOne' : 'library.countMany', { count: projects.length })}</p>
       </div>
       <div class="flex flex-wrap items-center gap-3">
+        {#if cloud}
+          <a href={`${base}/${signedIn ? 'konto' : 'logowanie'}`} class="px-3 py-2.5 text-white/80 hover:text-white rounded-lg hover:bg-white/10 text-sm">{signedIn ? $t('auth.account') : $t('auth.signIn')}</a>
+        {/if}
         <button
           onclick={() => showTemplateModal = true}
           class="px-4 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 font-medium text-sm transition-all flex items-center gap-2 border border-white/20"
