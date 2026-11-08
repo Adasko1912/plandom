@@ -25,5 +25,5 @@ export const catalogCategoryLabels: Record<string, TranslationKey> = {
 };
 
 export function normalizeCatalogSearch(value: string): string {
-  return value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+  return value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/ł/g, 'l');
 }

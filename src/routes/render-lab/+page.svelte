@@ -44,10 +44,10 @@
   });
 </script>
 
-<svelte:head><title>Render lab · OpenPlan3D</title><meta name="robots" content="noindex" /></svelte:head>
+<svelte:head><title>Render lab · PlanDom</title><meta name="robots" content="noindex" /></svelte:head>
 <div class="lab">
   <header>
-    <a href={`${base}/`} class="brand"><span class="mark">◈</span> OpenPlan3D <span class="divider">/</span> <span class="light">Render lab</span></a>
+    <a href={`${base}/`} class="brand"><span class="mark">◈</span> PlanDom <span class="divider">/</span> <span class="light">Render lab</span></a>
     <div class="private"><span></span> {startupModel ? 'Browser rendering' : 'Local workspace'}</div>
   </header>
   <main>

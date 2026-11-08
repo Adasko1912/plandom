@@ -721,7 +721,7 @@
         <!-- Catalog grid -->
         <div class="grid grid-cols-2 gap-2 mt-2">
           {#each filtered as item}
-            {@const s = search.toLowerCase()}
+            {@const s = normalizeCatalogSearch(search)}
             <div class="relative">
               <button
                 class="w-full h-full flex flex-col items-center gap-1 p-3 rounded-lg border-2 transition-colors cursor-grab active:cursor-grabbing {currentPlacing === item.id ? 'border-blue-400 bg-blue-50 ring-1 ring-blue-300' : 'border-gray-100 hover:border-blue-300 hover:bg-blue-50'}"
@@ -733,8 +733,8 @@
                 onmouseleave={onItemMouseLeave}
               >
                 <div class="w-12 h-12"><FurnitureThumbnail catalogId={item.id} name={furnitureName(item.id, $locale)} color={item.color} /></div>
-                {#if s && furnitureName(item.id, $locale).toLowerCase().includes(s)}
-                  {@const idx = furnitureName(item.id, $locale).toLowerCase().indexOf(s)}
+                {#if s && normalizeCatalogSearch(furnitureName(item.id, $locale)).includes(s)}
+                  {@const idx = normalizeCatalogSearch(furnitureName(item.id, $locale)).indexOf(s)}
                   <span class="text-xs font-medium text-gray-600">{furnitureName(item.id, $locale).slice(0, idx)}<mark class="bg-yellow-200 text-gray-800 rounded-sm px-0.5">{furnitureName(item.id, $locale).slice(idx, idx + s.length)}</mark>{furnitureName(item.id, $locale).slice(idx + s.length)}</span>
                 {:else}
                   <span class="text-xs font-medium text-gray-600">{furnitureName(item.id, $locale)}</span>
