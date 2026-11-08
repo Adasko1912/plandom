@@ -9,7 +9,7 @@ async function exportJSON(page: Page) {
 }
 
 // 2 × 2 dark grey PNG standing in for a product photo.
-const PHOTO = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVR4nGM0MjJiYGBgYmBgYGBgAAAKEgGBJgFJ9wAAAABJRU5ErkJggg==', 'base64');
+const PHOTO = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAADklEQVR4nGMwBgMGCAUAEMoCZf1+SO0AAAAASUVORK5CYII=', 'base64');
 
 test('a manufacturer product is added, applied to a wall and shown in 3D', async ({ page }) => {
   const errors: string[] = [];
