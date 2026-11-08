@@ -1,4 +1,5 @@
 import { selectionRotation } from '$lib/utils/selectionRotation';
+import { locale, translate } from '$lib/i18n';
 import { splitWallRoomReferences } from '$lib/utils/splitWallRooms';
 import { splitWallGeometry } from '$lib/utils/splitWallGeometry';
 import { wallPathProfile } from '$lib/utils/wallProfiles';
@@ -22,10 +23,14 @@ function uid(): string {
 
 export function createDefaultFloor(level = 0): Floor {
   const id = uid();
-  return { id, name: level === 0 ? 'Ground Floor' : `Floor ${level}`, level, walls: [], rooms: [], doors: [], windows: [], furniture: [], stairs: [], columns: [], guides: [], measurements: [], annotations: [], textAnnotations: [], groups: [] };
+  // Localize newly generated names only; imported and user-authored names stay intact.
+  const name = get(locale) === 'pl'
+    ? translate('pl', level === 0 ? 'floorControls.groundFloor' : 'floorControls.numberedFloor', { level })
+    : level === 0 ? 'Ground Floor' : `Floor ${level}`;
+  return { id, name, level, walls: [], rooms: [], doors: [], windows: [], furniture: [], stairs: [], columns: [], guides: [], measurements: [], annotations: [], textAnnotations: [], groups: [] };
 }
 
-export function createDefaultProject(name = 'Untitled Project'): Project {
+export function createDefaultProject(name = get(locale) === 'pl' ? translate('pl', 'library.untitled') : 'Untitled Project'): Project {
   const floor = createDefaultFloor();
   return {
     id: uid(),

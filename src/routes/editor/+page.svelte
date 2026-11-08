@@ -2,7 +2,7 @@
   import { t, locale } from '$lib/i18n';
   import { projectServiceMessage } from '$lib/i18n/projectServiceMessages';
   import { modalDialog, hasOpenModal } from '$lib/utils/modalDialog';
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { get } from 'svelte/store';
   import { base } from '$app/paths';
   import { replaceState } from '$app/navigation';
@@ -83,6 +83,8 @@
   async function initializeEditor() {
     loadError = null;
     try {
+      // Let the layout's after-hydration locale initialization finish before naming a new plan.
+      await tick();
       const url = new URL(window.location.href);
 
       const id = url.searchParams.get('id');
@@ -155,6 +157,8 @@
     if (e.key === 'l' && !mod && !e.altKey && !typing) showLayers = !showLayers;
   }
 </script>
+
+<svelte:head><title>PlanDom</title></svelte:head>
 
 <svelte:window on:keydown={onEditorKeydown} />
 
@@ -272,7 +276,7 @@
                 const generation = ++shortcutCopyGeneration;
                 shortcutCopyState = 'copying';
                 const text = [
-                  $t('shortcuts.title') + ' — OpenPlan3D',
+                  $t('shortcuts.title') + ' — PlanDom',
                   '',
                   '── ' + $t('shortcuts.tools') + ' ──',
                   "V          " + $t('shortcuts.select'),

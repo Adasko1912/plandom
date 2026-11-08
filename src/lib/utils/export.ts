@@ -1,5 +1,5 @@
 import { prepareEntourageImage } from './entourageImages';
-import { translate, type Locale, type TranslationKey } from '$lib/i18n';
+import { intlLocale, translate, type Locale, type TranslationKey } from '$lib/i18n';
 import { furnitureName, customModelName } from '$lib/i18n/furnitureNames';
 import { roomHoles, traceRoomRings } from './roomNesting';
 import { getEntourageDef } from './entourageCatalog';
@@ -692,7 +692,7 @@ function renderPDF(project: Project, preparedImages: ReadonlyMap<string,HTMLImag
     }
 
     // Date / scale
-    const today = new Date().toLocaleDateString(language === 'pt' ? 'pt-BR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const today = new Date().toLocaleDateString(language === 'en' ? 'en-US' : intlLocale(language), { year: 'numeric', month: 'long', day: 'numeric' });
     pdf.setFontSize(8);
     pdf.text(label('pdf.date', { date: today }), col1 + 4, tbY + 9);
     pdf.text(label('pdf.units', { units: label(settings.units === 'imperial' ? 'settings.imperial' : 'settings.metric') }), col1 + 4, tbY + 15);

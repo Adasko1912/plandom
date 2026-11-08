@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t, locale } from '$lib/i18n';
   import { furnitureName } from '$lib/i18n/furnitureNames';
-  import { catalogCategoryLabels } from '$lib/i18n/catalogCategories';
+  import { catalogCategoryLabels, normalizeCatalogSearch } from '$lib/i18n/catalogCategories';
   import { exportPNGWithFeedback, exportPDFWithFeedback as exportPDF, exportSVGWithFeedback, exportDXFWithFeedback } from '$lib/stores/exportNotice';
   import { tick } from 'svelte';
   import { modalDialog } from '$lib/utils/modalDialog';
@@ -73,7 +73,7 @@
   const allItems = $derived([...actions, ...tools, ...furnitureItems]);
 
   function searchText(value: string) {
-    return value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+    return normalizeCatalogSearch(value);
   }
 
   let results = $derived.by(() => {

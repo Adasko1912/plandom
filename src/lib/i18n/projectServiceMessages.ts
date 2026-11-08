@@ -32,6 +32,8 @@ const keys: ServiceKey[] = [
   'projectService.backupHistoryUnreadable', 'projectService.backupPreviewUnsupported',
 ];
 const messages = new Map(keys.map(key => [translate('en', key), key]));
+// The storage service still emits the upstream diagnostic; branding is display-only.
+messages.set('Close other OpenPlan3D tabs, then retry loading to update browser storage. Your saved projects have not been removed.', 'projectService.upgradeBlocked');
 const packageKeys: ServiceKey[] = [
   'projectService.packageGeometry', 'projectService.packageIdentity', 'projectService.packageDuplicateIdentity',
   'projectService.packageImages',
@@ -91,7 +93,7 @@ function countedMessage(message: string, language: Locale): string {
   return projectValidationMessage(packageMessage(message, language), language);
 }
 const outcomes = (['welcome.noImport', 'restore.retry', 'package.retry', 'projectService.historyUnchanged'] as const)
-  .flatMap(key => (['en', 'pt'] as const).map(locale => ({ key, text: ` ${translate(locale, key)}` })));
+  .flatMap(key => (['en', 'pt', 'pl'] as const).map(locale => ({ key, text: ` ${translate(locale, key)}` })));
 
 /** Translate known service diagnostics without altering unknown error details. */
 export function projectServiceMessage(message: string, language: Locale): string {
