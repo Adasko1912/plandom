@@ -30,6 +30,7 @@
   import RoomFromPhotosDialog from '$lib/components/import/RoomFromPhotosDialog.svelte';
   let planImportOpen = $state(false);
   let roomFromPhotosOpen = $state(false);
+  import { openMaterialLibrary } from '$lib/stores/materialLibrary';
 
   const wallPresetLabels: Record<WallPreset, TranslationKey> = {
     exterior: 'wallPreset.exterior', loadBearing: 'wallPreset.loadBearing', partition: 'wallPreset.partition',
@@ -555,6 +556,16 @@
           <div class="text-left">
             <div class="font-medium">{$t('roomFromPhotos.button')}</div>
             <div class="text-xs text-gray-400">{$t('roomFromPhotos.buttonHelp')}</div>
+          </div>
+        </button>
+        <button
+          class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors hover:bg-gray-50 text-gray-700"
+          onclick={() => openMaterialLibrary()}
+        >
+          <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-lg" aria-hidden="true">🧱</div>
+          <div class="text-left">
+            <div class="font-medium">{$t('materials.button')}</div>
+            <div class="text-xs text-gray-400">{$t('materials.buttonHelp')}</div>
           </div>
         </button>
         <button
