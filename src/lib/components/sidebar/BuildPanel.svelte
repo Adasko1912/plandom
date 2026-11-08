@@ -24,6 +24,15 @@
   import { addRoomPlanFloorsToProject, currentProject, selectImportedElements } from '$lib/stores/project';
   import { selectableContentIds, type AddedContent } from '$lib/utils/roomplanMerge';
   import { interchangeProjectName } from '$lib/utils/interchange';
+  import { projectSettings, WALL_PRESETS, WALL_PRESET_THICKNESS, type WallPreset } from '$lib/stores/settings';
+  import type { TranslationKey } from '$lib/i18n';
+
+  const wallPresetLabels: Record<WallPreset, TranslationKey> = {
+    exterior: 'wallPreset.exterior', loadBearing: 'wallPreset.loadBearing', partition: 'wallPreset.partition',
+  };
+  function chooseWallPreset(preset: WallPreset) {
+    projectSettings.update(s => ({ ...s, wallPreset: preset }));
+  }
 
   const openingLifetime = new AbortController();
   onDestroy(() => openingLifetime.abort());
@@ -429,6 +438,18 @@
             <div class="text-xs text-gray-400">{$t('buildTools.wallHelp')}</div>
           </div>
         </button>
+        {#if currentTool === 'wall'}
+          <div role="group" aria-label={$t('wallPreset.label')} class="flex gap-1 px-1 pb-1">
+            {#each WALL_PRESETS as preset}
+              <button
+                type="button"
+                class="flex-1 rounded-md border px-1.5 py-1 text-[11px] leading-tight transition-colors {$projectSettings.wallPreset === preset ? 'border-blue-300 bg-blue-50 text-slate-800' : 'border-gray-200 text-gray-600 hover:bg-gray-50'}"
+                aria-pressed={$projectSettings.wallPreset === preset}
+                onclick={() => chooseWallPreset(preset)}
+              >{$t(wallPresetLabels[preset], { thickness: WALL_PRESET_THICKNESS[preset] })}</button>
+            {/each}
+          </div>
+        {/if}
 
         <h3 class="text-xs font-semibold text-gray-400 uppercase mb-2 mt-3">{$t('buildTools.structure')}</h3>
         <button

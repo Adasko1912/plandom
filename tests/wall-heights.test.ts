@@ -102,15 +102,15 @@ describe('Variable Height Wall Unit Tests', () => {
       expect(getWallHeightAt(bareWall, 0.5)).toBe(280);
     });
 
-    it('initializes new walls with default startHeight and endHeight of 280', () => {
+    it('initializes new walls with the default storey height of 270', () => {
       const wallId = addWall({ x: 0, y: 0 }, { x: 100, y: 0 });
       const p = get(currentProject)!;
       const floor = p.floors.find(f => f.id === p.activeFloorId)!;
       const wall = floor.walls.find(w => w.id === wallId)!;
 
-      expect(wall.startHeight).toBe(280);
-      expect(wall.endHeight).toBe(280);
-      expect(wall.height).toBe(280);
+      expect(wall.startHeight).toBe(270);
+      expect(wall.endHeight).toBe(270);
+      expect(wall.height).toBe(270);
     });
   });
 
@@ -232,11 +232,11 @@ describe('Variable Height Wall Unit Tests', () => {
     it('restores previous startHeight and endHeight on undo and redo', () => {
       const wallId = addWall({ x: 0, y: 0 }, { x: 100, y: 0 });
 
-      // Initially 280 / 280
+      // Initially 270 / 270
       let p = get(currentProject)!;
       let wall = p.floors[0].walls.find(w => w.id === wallId)!;
-      expect(wall.startHeight).toBe(280);
-      expect(wall.endHeight).toBe(280);
+      expect(wall.startHeight).toBe(270);
+      expect(wall.endHeight).toBe(270);
 
       // Edit wall heights to 200 / 350
       updateWall(wallId, { startHeight: 200, endHeight: 350 });
@@ -245,12 +245,12 @@ describe('Variable Height Wall Unit Tests', () => {
       expect(wall.startHeight).toBe(200);
       expect(wall.endHeight).toBe(350);
 
-      // Undo edit -> restores 280 / 280
+      // Undo edit -> restores 270 / 270
       undo();
       p = get(currentProject)!;
       wall = p.floors[0].walls.find(w => w.id === wallId)!;
-      expect(wall.startHeight).toBe(280);
-      expect(wall.endHeight).toBe(280);
+      expect(wall.startHeight).toBe(270);
+      expect(wall.endHeight).toBe(270);
 
       // Redo edit -> restores 200 / 350
       redo();
