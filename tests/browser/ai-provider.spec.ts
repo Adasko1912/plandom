@@ -1,4 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
+
+// Run against a build made with the same opt-in flag.
+test.skip(process.env.VITE_ENABLE_AI_RENDER !== 'true', 'AI rendering is disabled by default.');
 import { createTestAIProvider, type ProviderRequest } from '../fixtures/ai-provider';
 import { readFile } from 'node:fs/promises';
 

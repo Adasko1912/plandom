@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { enableAIRender } from '$lib/features';
   import { t, locale, type TranslationKey } from '$lib/i18n';
   import { furnitureName } from '$lib/i18n/furnitureNames';
   import { catalogCategoryLabels } from '$lib/i18n/catalogCategories';
@@ -2180,9 +2181,11 @@
       <div class="flex items-center justify-between px-3 py-2 border-b border-gray-700">
         <span class="text-white text-sm font-medium">{$t('viewerCamera.title')}</span>
         <div class="flex gap-2">
+          {#if enableAIRender}
           <button class="text-xs text-blue-400 hover:text-blue-300" onclick={() => { cancelAIRender(); aiRenderOpen = !aiRenderOpen; }}>
             {aiRenderOpen ? $t('viewerAI.hide') : $t('viewerAI.show')}
           </button>
+          {/if}
           <button class="text-gray-400 hover:text-white text-lg leading-none" onclick={closeCamera} aria-label={$t('viewerCamera.close')}>✕</button>
         </div>
       </div>
@@ -2246,7 +2249,7 @@
       </div>
 
       <!-- AI Render Section -->
-      {#if aiRenderOpen}
+      {#if enableAIRender && aiRenderOpen}
         <div class="border-t border-gray-700 px-3 py-3 space-y-2">
           <div class="text-xs font-medium text-white">{$t('viewerAI.title')}</div>
 

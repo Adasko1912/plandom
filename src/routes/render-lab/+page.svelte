@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { dev } from '$app/environment';
+  import { base } from '$app/paths';
   import type { createViewer, LabStatus } from '$lib/renderLab/viewer';
   let { startupModel = '' }: { startupModel?: string } = $props();
   let host: HTMLDivElement;
@@ -31,7 +32,7 @@
         viewer = await module.createViewer(host, s => { status = s; if (s.error) error = s.error; });
         if (canceled) { viewer.dispose(); return; }
         if (dev || startupModel) {
-          const response = await fetch(startupModel || '/__render-lab/scene.glb');
+          const response = await fetch(startupModel || `${base}/__render-lab/scene.glb`);
           if (response.ok && (startupModel || response.headers.get('content-type')?.includes('model/gltf-binary'))) {
             await load(await response.arrayBuffer(), 'Capture study');
           }
@@ -46,7 +47,7 @@
 <svelte:head><title>Render lab · OpenPlan3D</title><meta name="robots" content="noindex" /></svelte:head>
 <div class="lab">
   <header>
-    <a href="/" class="brand"><span class="mark">◈</span> OpenPlan3D <span class="divider">/</span> <span class="light">Render lab</span></a>
+    <a href={`${base}/`} class="brand"><span class="mark">◈</span> OpenPlan3D <span class="divider">/</span> <span class="light">Render lab</span></a>
     <div class="private"><span></span> {startupModel ? 'Browser rendering' : 'Local workspace'}</div>
   </header>
   <main>

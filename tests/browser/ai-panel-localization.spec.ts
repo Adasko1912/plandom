@@ -17,6 +17,13 @@ test('Portuguese AI choices preserve provider prompt values without sending an i
   await viewer.getByRole('button', { name: 'Posicionar câmera interna', exact: true }).click();
   const bounds = (await canvas.boundingBox())!;
   await canvas.click({ position: { x: bounds.width * .45, y: bounds.height * .5 } });
+  if (process.env.VITE_ENABLE_AI_RENDER !== 'true') {
+    await expect(viewer.getByLabel('Prévia da câmera interna', { exact: true })).toBeVisible();
+    await expect(viewer.getByRole('button', { name: '✨ Renderizar com IA', exact: true })).toHaveCount(0);
+    await expect(viewer.getByRole('button', { name: 'OpenAI', exact: true })).toHaveCount(0);
+    expect(external).toEqual([]);
+    return;
+  }
   await viewer.getByRole('button', { name: '✨ Renderizar com IA', exact: true }).click();
   await viewer.getByRole('combobox', { name: 'Estilo', exact: true }).selectOption({ label: 'visualização arquitetônica' });
   await viewer.getByRole('combobox', { name: 'Iluminação', exact: true }).selectOption({ label: 'hora dourada' });

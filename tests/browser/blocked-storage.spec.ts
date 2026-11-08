@@ -78,14 +78,18 @@ test('with site storage blocked the snap step, Settings, the Gemini key and cata
   const settings = page.getByRole('dialog', { name: 'Settings', exact: true });
   await settings.getByRole('button', { name: 'Dimensions', exact: true }).click();
   await settings.getByRole('button', { name: 'ft, inch', exact: true }).click();
-  // A key that cannot be stored is reported instead of shown as saved.
-  await settings.getByRole('button', { name: 'AI', exact: true }).click();
-  await settings.getByPlaceholder('AIza...', { exact: true }).fill('AIza-blocked-storage');
-  await settings.getByRole('button', { name: 'Save Key', exact: true }).click();
-  await expect(settings.getByRole('alert')).toHaveText('Browser storage is unavailable. The key could not be saved.');
-  await expect(settings.getByRole('button', { name: 'Save Key', exact: true })).toBeVisible();
-  await settings.getByRole('button', { name: 'Remove', exact: true }).click();
-  await expect(settings.getByRole('alert')).toHaveText('Browser storage is unavailable. The key could not be removed.');
+  if (process.env.VITE_ENABLE_AI_RENDER === 'true') {
+    // A key that cannot be stored is reported instead of shown as saved.
+    await settings.getByRole('button', { name: 'AI', exact: true }).click();
+    await settings.getByPlaceholder('AIza...', { exact: true }).fill('AIza-blocked-storage');
+    await settings.getByRole('button', { name: 'Save Key', exact: true }).click();
+    await expect(settings.getByRole('alert')).toHaveText('Browser storage is unavailable. The key could not be saved.');
+    await expect(settings.getByRole('button', { name: 'Save Key', exact: true })).toBeVisible();
+    await settings.getByRole('button', { name: 'Remove', exact: true }).click();
+    await expect(settings.getByRole('alert')).toHaveText('Browser storage is unavailable. The key could not be removed.');
+  } else {
+    await expect(settings.getByRole('button', { name: 'AI', exact: true })).toHaveCount(0);
+  }
   await settings.getByRole('button', { name: 'Close settings', exact: true }).click();
   await expect(page.getByTitle('Switch snap step: 9.8" grid or 3.9" (S)', { exact: true })).toHaveText('🧲 Snap 9.8"');
 

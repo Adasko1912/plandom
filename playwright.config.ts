@@ -1,7 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-// Use the real Node production build. Each test gets an empty browser profile;
-// no credentials or Firebase services are needed.
+// Serve the static production build with empty BASE_PATH. Each test gets an empty browser profile.
 export default defineConfig({
   testDir: './tests/browser',
   testMatch: '**/*.spec.ts',
@@ -34,15 +33,9 @@ export default defineConfig({
     { name: 'webkit', use: { ...devices['Desktop Safari'], viewport: { width: 1440, height: 900 } } },
   ],
   webServer: {
-    command: 'node build/index.js',
+    command: 'npx vite preview --host 127.0.0.1 --port 4188 --strictPort',
     url: 'http://127.0.0.1:4188',
     reuseExistingServer: false,
     timeout: 30_000,
-    env: {
-      NODE_ENV: 'production', HOST: '127.0.0.1', PORT: '4188',
-      ORIGIN: 'http://127.0.0.1:4188', PUBLIC_ENABLE_ANALYTICS: 'false',
-      HANDOFF_UPLOADS_ENABLED: 'false', HANDOFF_BUCKET: '',
-      BODY_SIZE_LIMIT: '2M',
-    },
   },
 });

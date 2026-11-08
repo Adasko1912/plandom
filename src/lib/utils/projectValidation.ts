@@ -44,13 +44,22 @@ export function readProject(value: unknown): Project {
     if (!Array.isArray(value)) fail(path, 'must be an array');
     for (const [i, id] of value.entries()) text(id, `${path}[${i}]`, true);
   };
+  const input = record(value, 'document');
+  // Check before cloning, which would turn class instances into ordinary objects.
+  for (const key of ['facade', 'location', 'costSettings', 'site']) {
+    if (input[key] === undefined) continue;
+    const value = record(input[key], key);
+    if (Object.getPrototypeOf(value) !== Object.prototype && Object.getPrototypeOf(value) !== null) fail(key, 'must be a plain object');
+  }
   let project: Record<string, any>;
-  try { project = structuredClone(record(value, 'document')); }
+  try { project = structuredClone(input); }
   catch (error) {
     if (error instanceof Error && error.message.startsWith('Invalid project:')) throw error;
     fail('document', 'could not be read');
   }
   text(project!.id, 'id', true);
+  if (project!.plandomSchema !== undefined && project!.plandomSchema !== 1) fail('plandomSchema', 'must be 1');
+  if (project!.roofs !== undefined) list(project!, 'roofs', 'document', false);
   defaults(project!, { name: 'Untitled Project' });
   text(project!.name, 'name'); strings(project!, ['description'], 'document');
   if (project!.projectPackage !== undefined) validateRetainedDetailState(project!.projectPackage);
@@ -77,6 +86,9 @@ export function readProject(value: unknown): Project {
   for (const [index, floor] of floors.entries()) {
     const path = `floors[${index}]`;
     record(floor, path); text(floor.id, `${path}.id`, true);
+    for (const key of ['cabinetRuns', 'wardrobes', 'wallFinishes', 'lights']) {
+      if (floor[key] !== undefined) list(floor, key, path, false);
+    }
     if (floorIds.has(floor.id)) fail(`${path}.id`, 'duplicates another floor');
     floorIds.add(floor.id);
     defaults(floor, { name: index === 0 ? 'Ground Floor' : `Floor ${index}`, level: index });

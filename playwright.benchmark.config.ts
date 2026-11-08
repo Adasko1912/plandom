@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
 import common from './playwright.config';
 
-// Same production build as correctness CI. Timing is informational on shared
+// Same static production build and preview server as correctness CI. Timing is informational on shared
 // software-rendered runners; allocation and preservation expectations are gates.
 export default defineConfig({ ...common,
   // wall-hit.bench.ts belongs to Vitest; importing it here prevents Playwright

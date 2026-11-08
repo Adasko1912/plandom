@@ -37,17 +37,21 @@ test('Portuguese settings edit floor values and configure a provider', async ({ 
   await elevation.fill('125.5');
   await elevation.press('Tab');
   await expect(elevation).toHaveValue('125.5');
-  await dialog.getByRole('button', { name: 'IA', exact: true }).click();
-  const provider = dialog.getByRole('region', { name: 'Configurações do provedor OpenAI' });
-  await provider.getByLabel('Chave de API do provedor', { exact: true }).fill('qa-placeholder');
-  await provider.getByRole('button', { name: 'Salvar configurações OpenAI' }).click();
-  await expect(provider.getByRole('status')).toHaveText('Configurações OpenAI salvas.');
-  await provider.getByRole('button', { name: 'Carregar modelos', exact: true }).click();
-  await expect(provider.getByRole('status').filter({ hasText: '1 modelo encontrado.' })).toBeVisible();
-  await provider.getByLabel('Modelo OpenAI', { exact: true }).fill('qa-image-model');
-  await provider.getByLabel('Modelo OpenAI', { exact: true }).press('Tab');
-  await provider.getByRole('button', { name: 'Remover configurações OpenAI' }).click();
-  await expect(provider.getByRole('status').filter({ hasText: 'Configurações OpenAI removidas.' })).toBeVisible();
+  if (process.env.VITE_ENABLE_AI_RENDER === 'true') {
+    await dialog.getByRole('button', { name: 'IA', exact: true }).click();
+    const provider = dialog.getByRole('region', { name: 'Configurações do provedor OpenAI' });
+    await provider.getByLabel('Chave de API do provedor', { exact: true }).fill('qa-placeholder');
+    await provider.getByRole('button', { name: 'Salvar configurações OpenAI' }).click();
+    await expect(provider.getByRole('status')).toHaveText('Configurações OpenAI salvas.');
+    await provider.getByRole('button', { name: 'Carregar modelos', exact: true }).click();
+    await expect(provider.getByRole('status').filter({ hasText: '1 modelo encontrado.' })).toBeVisible();
+    await provider.getByLabel('Modelo OpenAI', { exact: true }).fill('qa-image-model');
+    await provider.getByLabel('Modelo OpenAI', { exact: true }).press('Tab');
+    await provider.getByRole('button', { name: 'Remover configurações OpenAI' }).click();
+    await expect(provider.getByRole('status').filter({ hasText: 'Configurações OpenAI removidas.' })).toBeVisible();
+  } else {
+    await expect(dialog.getByRole('button', { name: 'IA', exact: true })).toHaveCount(0);
+  }
   await dialog.getByRole('button', { name: 'Projeto', exact: true }).click();
   await expect(floors.getByRole('spinbutton', { name: /^Elevação de / }).first()).toHaveValue('125.5');
 });

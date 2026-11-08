@@ -15,7 +15,6 @@
   import ProjectPackageDialog from '$lib/components/ProjectPackageDialog.svelte';
   import LibraryRestoreDialog from '$lib/components/LibraryRestoreDialog.svelte';
   import { isLibraryBackup, LibraryBackupFileError } from '$lib/services/libraryRestore';
-  import AssistantShareDialog from '$lib/components/AssistantShareDialog.svelte';
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
   import { orderedFloors } from '$lib/utils/floors';
@@ -39,7 +38,6 @@
   let packageOpen = $state(false);
   /** A library backup given to Import JSON opens in Restore library backup instead. */
   let restoreFile = $state.raw<File | null>(null);
-  let assistantShareProject = $state<import('$lib/models/types').Project | null>(null);
 
   let settingsOpen = $state(false);
   let areaOpen = $state(false);
@@ -197,12 +195,6 @@
       const { downloadProjectPackage } = await import('$lib/services/projectPackage');
       if (!openingLifetime.signal.aborted) downloadProjectPackage(snapshot);
     } catch (error) { packageError = error instanceof Error ? error.message : 'Could not export this project package.'; }
-  }
-
-  function onShareWithAssistant() {
-    const project = get(currentProject);
-    exportOpen = false;
-    if (project) assistantShareProject = structuredClone(project);
   }
 
   function onExportInterchange() {
@@ -655,8 +647,6 @@
         <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left" onclick={onExportInterchange}>{$t('exportMenu.interchange')}</button>
         <p class="px-3 pb-2 text-xs text-gray-500">{$t('exportMenu.interchangeHelp')}</p>
         <div class="h-px bg-gray-100 my-1"></div>
-        <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left" onclick={onShareWithAssistant}>{$t('exportMenu.assistant')}</button>
-        <div class="h-px bg-gray-100 my-1"></div>
         <button class="w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 text-left flex items-center gap-2" onclick={onImportJSON}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
           {$t('exportMenu.import')}
@@ -728,6 +718,5 @@
 {#if packageError}<ImportError title={$t('projectToolbar.packageError')} message={packageError} onDismiss={() => packageError = null} />{/if}
 {#if packageOpen}<ProjectPackageDialog onclose={() => packageOpen = false} onimported={openImportedPackage} />{/if}
 {#if restoreFile}<LibraryRestoreDialog file={restoreFile} onclose={() => restoreFile = null} onrestored={async () => {}} />{/if}
-{#if assistantShareProject}<AssistantShareDialog project={assistantShareProject} onclose={() => assistantShareProject = null} />{/if}
 
 <ExportNotice />

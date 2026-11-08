@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [svelte({ configFile: false })],
   resolve: { alias: {
     '$lib': fileURLToPath(new URL('../../src/lib', import.meta.url)),
-    '$app/environment': fileURLToPath(new URL('./environment.ts', import.meta.url))
+    '$app/environment': fileURLToPath(new URL('./environment.ts', import.meta.url)),
+    '$app/paths': fileURLToPath(new URL('./environment.ts', import.meta.url))
   } },
   build: { outDir: process.env.RENDER_LAB_OUTPUT || '/tmp/openplan3d-render-site', emptyOutDir: true }
 });

@@ -213,6 +213,10 @@ export interface CustomEntourageDef {
 }
 
 export interface Floor {
+  cabinetRuns?: unknown; // PlanDom — typed in its module stage
+  wardrobes?: unknown; // PlanDom — typed in its module stage
+  wallFinishes?: unknown; // PlanDom — typed in its module stage
+  lights?: unknown; // PlanDom — typed in its module stage
   id: string;
   name: string;
   level: number;
@@ -269,6 +273,12 @@ export interface InterchangeState {
 }
 
 export interface Project {
+  plandomSchema?: 1;
+  location?: unknown; // PlanDom — typed in its module stage
+  facade?: unknown; // PlanDom — typed in its module stage
+  roofs?: unknown; // PlanDom — typed in its module stage
+  costSettings?: unknown; // PlanDom — typed in its module stage
+  site?: unknown; // PlanDom — typed in its module stage
   customModels?: CustomModelDef[];
   attachmentNames?: Record<string, string>;
   projectPackage?: ProjectPackageState;

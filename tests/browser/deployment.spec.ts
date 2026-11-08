@@ -108,7 +108,7 @@ cacheTest('real cached validators cannot create a false update or hide a later d
     await expect(page.getByRole('button', { name: 'Save and reload', exact: true })).toHaveCount(0);
     expect((await savedProjects(page))['qa-deployment-cache'].name).toBe('Saved across deployment');
 
-    const asset = (await readdir('build/client/_app/immutable/entry')).find(name => /^start\..*\.js$/.test(name));
+    const asset = (await readdir('build/_app/immutable/entry')).find(name => /^start\..*\.js$/.test(name));
     expect(asset).toBeTruthy();
     const response = await context.request.get(`${server.url}/_app/immutable/entry/${asset}`);
     expect(response.headers()['cache-control']).toContain('max-age=31536000,immutable');

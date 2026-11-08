@@ -5,7 +5,7 @@ import type { AddressInfo } from 'node:net';
 
 /** Real HTTP cache fixture: routing via Playwright would disable the cache. */
 export async function deploymentServer(upstream = 'http://127.0.0.1:4188') {
-  const { version: current } = JSON.parse(await readFile('build/client/_app/version.json', 'utf8'));
+  const { version: current } = JSON.parse(await readFile('build/_app/version.json', 'utf8'));
   const different = current.slice(0, -1) + (current.endsWith('0') ? '1' : '0');
   const etag = `W/"${Buffer.byteLength(JSON.stringify({ version: current }))}-315532801000"`;
   const modified = 'Tue, 01 Jan 1980 00:00:01 GMT';
