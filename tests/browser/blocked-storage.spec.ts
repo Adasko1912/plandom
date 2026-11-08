@@ -88,7 +88,10 @@ test('with site storage blocked the snap step, Settings, the Gemini key and cata
     await settings.getByRole('button', { name: 'Remove', exact: true }).click();
     await expect(settings.getByRole('alert')).toHaveText('Browser storage is unavailable. The key could not be removed.');
   } else {
-    await expect(settings.getByRole('button', { name: 'AI', exact: true })).toHaveCount(0);
+    // PlanDom keeps the provider settings for room analysis, but Gemini rendering stays hidden.
+    await settings.getByRole('button', { name: 'AI', exact: true }).click();
+    await expect(settings.getByPlaceholder('AIza...', { exact: true })).toHaveCount(0);
+    await expect(settings.getByRole('region', { name: 'OpenAI provider settings' })).toBeVisible();
   }
   await settings.getByRole('button', { name: 'Close settings', exact: true }).click();
   await expect(page.getByTitle('Switch snap step: 9.8" grid or 3.9" (S)', { exact: true })).toHaveText('🧲 Snap 9.8"');

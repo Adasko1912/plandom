@@ -50,7 +50,9 @@ test('Portuguese settings edit floor values and configure a provider', async ({ 
     await provider.getByRole('button', { name: 'Remover configurações OpenAI' }).click();
     await expect(provider.getByRole('status').filter({ hasText: 'Configurações OpenAI removidas.' })).toBeVisible();
   } else {
-    await expect(dialog.getByRole('button', { name: 'IA', exact: true })).toHaveCount(0);
+    await dialog.getByRole('button', { name: 'IA', exact: true }).click();
+    await expect(dialog.getByRole('region', { name: 'Configurações do provedor OpenAI' })).toBeVisible();
+    await expect(dialog.getByPlaceholder('AIza...', { exact: true })).toHaveCount(0);
   }
   await dialog.getByRole('button', { name: 'Projeto', exact: true }).click();
   await expect(floors.getByRole('spinbutton', { name: /^Elevação de / }).first()).toHaveValue('125.5');

@@ -3925,6 +3925,12 @@
       <span>{$t(joinHint)}</span>
     </div>
   {/if}
+  {#if isCalibrating}
+    <div role="status" class="absolute top-3 left-1/2 -translate-x-1/2 z-30 bg-slate-800/90 text-white text-xs font-medium px-3.5 py-1.5 rounded-full shadow-lg pointer-events-none flex items-center gap-1.5">
+      <span aria-hidden="true">📏</span>
+      <span>{$t(calPoints.length === 0 ? 'planImport.calibrateFirst' : 'planImport.calibrateSecond')}</span>
+    </div>
+  {/if}
   <!-- Inline room name editor -->
   {#if editingRoomId}
     <input
