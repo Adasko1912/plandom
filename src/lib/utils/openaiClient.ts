@@ -81,7 +81,7 @@ async function readJSON(response: Response, maxBytes: number): Promise<unknown> 
 }
 
 async function request(
-  config: OpenAIConfig, path: 'models' | 'responses', body: unknown,
+  config: OpenAIConfig, path: 'models' | 'responses' | 'chat/completions', body: unknown,
   customFetch: typeof fetch, signal?: AbortSignal
 ): Promise<unknown> {
   const baseUrl = validateOpenAIConfig(config);
@@ -107,7 +107,9 @@ async function request(
       const hint = response.status === 401 || response.status === 403 ? 'Check the provider key and account access.'
         : response.status === 429 ? 'The provider rate or spending limit was reached. Try again later.'
         : response.status === 400 || response.status === 404 || response.status === 422
-          ? 'Check the base URL and model. Rendering requires POST /responses with the image_generation tool.'
+          ? (path === 'chat/completions'
+            ? 'Check the base URL and model. Room analysis requires POST /chat/completions with image input.'
+            : 'Check the base URL and model. Rendering requires POST /responses with the image_generation tool.')
           : 'Check the provider status and try again.';
       throw new Error(`Provider request failed (HTTP ${response.status}). ${hint}`);
     }
@@ -149,4 +151,28 @@ export async function generateOpenAIRenderImage(
     return `data:image/png;base64,${image.result}`;
   }
   throw new Error('No image returned. This provider and model must support POST /responses with the image_generation tool. Try another model.');
+}
+
+/** One vision request through POST /chat/completions, the most widely supported
+ * OpenAI-compatible endpoint (OpenAI, Gemini, Ollama, Anthropic compatibility). */
+export async function chatWithImages(
+  config: OpenAIConfig, prompt: string, imageDataUrls: string[],
+  customFetch: typeof fetch = fetch, signal?: AbortSignal
+): Promise<string> {
+  const data = await request(config, 'chat/completions', {
+    model: getEffectiveModel(config),
+    messages: [{ role: 'user', content: [
+      { type: 'text', text: prompt },
+      ...imageDataUrls.map(url => ({ type: 'image_url', image_url: { url } })),
+    ] }],
+  }, customFetch, signal);
+  const choice = isRecord(data) && Array.isArray(data.choices) ? data.choices[0] : null;
+  const message = isRecord(choice) && isRecord(choice.message) ? choice.message : null;
+  const content = message?.content;
+  if (typeof content === 'string' && content.trim()) return content;
+  if (Array.isArray(content)) {
+    const text = content.map(part => isRecord(part) && typeof part.text === 'string' ? part.text : '').join('');
+    if (text.trim()) return text;
+  }
+  throw new Error('The provider returned no text. Choose a model that accepts images.');
 }

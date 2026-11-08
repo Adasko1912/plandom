@@ -17,6 +17,8 @@
   import { openingOnWall } from '$lib/utils/wallProfiles';
   import { getEntourageDef } from '$lib/utils/entourageCatalog';
   import { floorMaterials, wallColors } from '$lib/utils/materials';
+  import CustomMaterialPicker from '$lib/components/materials/CustomMaterialPicker.svelte';
+  import { customMaterialKey } from '$lib/utils/customMaterialRegistry';
   import { getCatalogItem } from '$lib/utils/furnitureCatalog';
   import { projectSettings, formatLength, formatArea, parseLengthInput } from '$lib/stores/settings';
     import type { Floor, Wall, Door, Window as Win, Room, FurnitureItem, Stair, Column, RoomCategory, TextAnnotation } from '$lib/models/types';
@@ -497,6 +499,7 @@
                 ><span class="bg-white/80 backdrop-blur-sm rounded px-1 py-0.5 mb-0.5 text-gray-700">{$t(wallMaterialLabels[wc.id])}</span></button>
               {/each}
             </div>
+            <CustomMaterialPicker surface="wall" selected={sideTex} onPick={(m) => { if (selectedWall) updateWall(selectedWall.id, { interiorTexture: customMaterialKey(m.id), interiorColor: m.color }); }} />
           </div>
         {:else}
           {@const sideColor = selectedWall.exteriorColor || selectedWall.color}
@@ -532,6 +535,7 @@
                 ><span class="bg-white/80 backdrop-blur-sm rounded px-1 py-0.5 mb-0.5 text-gray-700">{$t(wallMaterialLabels[wc.id])}</span></button>
               {/each}
             </div>
+            <CustomMaterialPicker surface="wall" selected={sideTex} onPick={(m) => { if (selectedWall) updateWall(selectedWall.id, { exteriorTexture: customMaterialKey(m.id), exteriorColor: m.color }); }} />
           </div>
         {/if}
       </div>
@@ -868,6 +872,7 @@
               </div>
             </div>
           {/each}
+          <CustomMaterialPicker surface="floor" selected={selectedRoom.floorTexture} area={selectedRoom.area / 10000} onPick={(m) => onRoomFloor(customMaterialKey(m.id))} />
         </div>
       </div>
     </div>

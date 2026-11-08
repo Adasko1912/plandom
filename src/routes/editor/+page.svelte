@@ -15,6 +15,7 @@
   import TopBar from '$lib/components/toolbar/TopBar.svelte';
   import BuildPanel from '$lib/components/sidebar/BuildPanel.svelte';
   import PropertiesPanel from '$lib/components/sidebar/PropertiesPanel.svelte';
+  import CustomMaterialsDialog from '$lib/components/materials/CustomMaterialsDialog.svelte';
   import LayersPanel from '$lib/components/sidebar/LayersPanel.svelte';
 
   let showLayers = $state(false);
@@ -454,3 +455,5 @@
     {/if}
   </div>
 {/if}
+
+<CustomMaterialsDialog />

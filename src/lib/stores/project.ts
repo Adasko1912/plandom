@@ -16,6 +16,7 @@ import { detailItem, itemDetails, validateItemDetails } from '$lib/utils/itemDet
 import { readProject } from '$lib/utils/projectValidation';
 import { mergeRoomPlanFloors, selectableContentIds, type AddedContent } from '$lib/utils/roomplanMerge';
 import { doorJoin } from '$lib/utils/scanAlignment';
+import { syncCustomMaterials } from '$lib/utils/customMaterials';
 
 
 function uid(): string {
@@ -44,6 +45,7 @@ export function createDefaultProject(name = get(locale) === 'pl' ? translate('pl
 }
 
 export const currentProject = writable<Project | null>(null);
+currentProject.subscribe(project => syncCustomMaterials(project));
 
 export const activeFloor = derived(currentProject, ($p) => {
   if (!$p) return null;
@@ -636,6 +638,38 @@ export function addCustomEntourage(name: string, dataUrl: string, aspect: number
   p.updatedAt = new Date();
   currentProject.set({ ...p });
   return id;
+}
+
+/** Adds a custom material, or replaces the one with the same id (PlanDom, rozdz. 6.5). */
+export function saveCustomMaterial(material: import('$lib/models/types').CustomMaterial): void {
+  const p = get(currentProject);
+  if (!p) return;
+  const list = p.customMaterials ?? [];
+  const index = list.findIndex(m => m.id === material.id);
+  snapshot(index < 0 ? 'Added custom material' : 'Edited custom material');
+  p.customMaterials = index < 0 ? [...list, structuredClone(material)] : list.map((m, i) => i === index ? structuredClone(material) : m);
+  p.updatedAt = new Date();
+  currentProject.set({ ...p });
+}
+
+/** Removes a custom material; surfaces that used it keep its colour without the texture. */
+export function removeCustomMaterial(id: string): void {
+  const p = get(currentProject);
+  const material = p?.customMaterials?.find(m => m.id === id);
+  if (!p || !material) return;
+  snapshot('Removed custom material');
+  const key = `custom:${id}`;
+  for (const floor of p.floors) {
+    for (const wall of floor.walls) {
+      if (wall.interiorTexture === key) { wall.interiorTexture = 'none'; wall.interiorColor = material.color; }
+      if (wall.exteriorTexture === key) { wall.exteriorTexture = 'none'; wall.exteriorColor = material.color; }
+      if (wall.texture === key) wall.texture = undefined;
+    }
+    for (const room of floor.rooms) if (room.floorTexture === key) { room.floorTexture = 'none'; room.color = material.color; }
+  }
+  p.customMaterials = p.customMaterials!.filter(m => m.id !== id);
+  p.updatedAt = new Date();
+  currentProject.set({ ...p, floors: [...p.floors] });
 }
 
 /** Scale calibration mode */

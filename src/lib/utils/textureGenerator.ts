@@ -5,6 +5,7 @@ import { catalogAssetUrl } from '$lib/utils/catalogAssetUrl';
  * Uses real photo textures from ambientCG (CC0) with procedural fallback.
  */
 import { base } from '$app/paths';
+import { isCustomMaterialKey, onCustomMaterialChange, registeredCustomMaterial } from './customMaterialRegistry';
 
 const cache = new Map<string, HTMLCanvasElement>();
 const imageCache = new Map<string, HTMLImageElement>();
@@ -504,6 +505,7 @@ const LEGACY_FLOOR_MAP: Record<string, string> = {
 };
 
 export function getFloorTextureCanvas(materialId: string): HTMLCanvasElement | null {
+  if (isCustomMaterialKey(materialId)) return loadCustomTexture(materialId);
   // Resolve legacy IDs to actual texture keys
   const resolvedId = LEGACY_FLOOR_MAP[materialId] || materialId;
   const cacheKey = `photo-floor-${resolvedId}`;
@@ -552,6 +554,7 @@ export function setTextureLoadCallback(cb: () => void): () => void {
 }
 
 export function getWallTextureCanvas(textureId: string, color: string): HTMLCanvasElement | null {
+  if (isCustomMaterialKey(textureId)) return loadCustomTexture(textureId);
   // Try photo texture first
   const photo = loadPhotoTexture(textureId, notifyTextureLoad);
   if (photo) return photo;
@@ -567,3 +570,45 @@ export function getWallTextureCanvas(textureId: string, color: string): HTMLCanv
     default: return null;
   }
 }
+
+/** Pixels of a texture canvas per 200 cm, the tile every wall and floor UV is measured in. */
+export const CUSTOM_TEXTURE_SIZE = 1024;
+const CUSTOM_TEXTURE_SPAN_CM = 200;
+
+/** Draws the product photo at its real size, repeated over one 200 × 200 cm texture tile. */
+export function composeCustomTexture(image: CanvasImageSource, tileWidth: number, tileHeight: number, size = CUSTOM_TEXTURE_SIZE): HTMLCanvasElement {
+  const canvas = document.createElement('canvas');
+  canvas.width = canvas.height = size;
+  const context = canvas.getContext('2d')!;
+  const w = Math.max(2, tileWidth / CUSTOM_TEXTURE_SPAN_CM * size), h = Math.max(2, tileHeight / CUSTOM_TEXTURE_SPAN_CM * size);
+  for (let y = 0; y < size; y += h) for (let x = 0; x < size; x += w) context.drawImage(image, x, y, w, h);
+  return canvas;
+}
+
+function loadCustomTexture(key: string): HTMLCanvasElement | null {
+  const material = registeredCustomMaterial(key);
+  if (!material?.textureDataUrl) return null;
+  const cacheKey = `custom-canvas-${key}`;
+  if (cache.has(cacheKey)) return cache.get(cacheKey)!;
+  const image = imageCache.get(`custom-${key}`);
+  if (image && image.src === material.textureDataUrl) {
+    const canvas = composeCustomTexture(image, material.tileWidth, material.tileHeight);
+    cache.set(cacheKey, canvas);
+    return canvas;
+  }
+  const loadKey = `custom-${key}`;
+  if (!loadingSet.has(loadKey)) {
+    loadingSet.add(loadKey);
+    const img = new Image();
+    img.onload = () => { loadingSet.delete(loadKey); imageCache.set(loadKey, img); cache.delete(cacheKey); notifyTextureLoad(); };
+    img.onerror = () => { loadingSet.delete(loadKey); };
+    img.src = material.textureDataUrl;
+  }
+  return null;
+}
+
+// An edited or removed material must not keep its old canvas.
+onCustomMaterialChange(keys => {
+  for (const key of keys) { cache.delete(`custom-canvas-${key}`); imageCache.delete(`custom-${key}`); }
+  notifyTextureLoad();
+});

@@ -1,3 +1,4 @@
+import { registeredCustomMaterial } from './customMaterialRegistry';
 export interface FloorMaterial {
   id: string;
   name: string;
@@ -58,6 +59,8 @@ export const wallColors: WallColor[] = [
 ];
 
 export function getMaterial(id: string): FloorMaterial {
+  const custom = registeredCustomMaterial(id);
+  if (custom) return { id, name: custom.name, color: custom.color, roughness: 0.7 };
   // Handle legacy material IDs
   const legacyMap: Record<string, string> = {
     'hardwood': 'light-oak',

@@ -291,4 +291,32 @@ export interface Project {
   createdAt: Date;
   updatedAt: Date;
   customEntourage?: CustomEntourageDef[];
+  /** PlanDom: the owner's own finishes and manufacturer products (rozdz. 6.5). */
+  customMaterials?: CustomMaterial[];
+}
+
+export type CustomMaterialUse = 'wall' | 'floor' | 'both';
+export type CustomMaterialCategory = 'panel' | 'tile' | 'wallpaper' | 'paint' | 'flooring' | 'other';
+export type CustomMaterialPriceUnit = 'm2' | 'piece' | 'package' | 'litre';
+
+/** A finish the owner added: a product from a manufacturer page or their own photo. */
+export interface CustomMaterial {
+  id: string;
+  name: string;
+  manufacturer?: string;
+  /** Product page, http(s) only; opened in a new tab, never fetched by the app. */
+  productUrl?: string;
+  category: CustomMaterialCategory;
+  use: CustomMaterialUse;
+  /** Photo of the surface, JPEG data URL up to 1024 px. Paint has none. */
+  textureDataUrl?: string;
+  /** Real size of one piece or pattern repeat in cm. */
+  tileWidth: number;
+  tileHeight: number;
+  /** Average photo colour, or the paint colour. */
+  color: string;
+  price?: { amount: number; unit: CustomMaterialPriceUnit };
+  /** m² covered by one package or litre. */
+  coverage?: number;
+  notes?: string;
 }

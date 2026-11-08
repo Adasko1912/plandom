@@ -2,6 +2,7 @@ import type { Project, DetailKind } from '$lib/models/types';
 import { validateItemDetails, validateRetainedDetailState } from './itemDetails';
 import { refreshLegacyFurnitureCategories } from './legacyFurnitureCategories';
 import { validateCustomModelDefinitions } from './customModelDefinitions';
+import { MAX_CUSTOM_MATERIALS, validateCustomMaterial } from './customMaterials';
 
 /** Read untrusted native files without mutating their input or the active editor. */
 export function readProject(value: unknown): Project {
@@ -193,6 +194,16 @@ export function readProject(value: unknown): Project {
       const path = `customEntourage[${i}]`; record(item, path); text(item.id, `${path}.id`, true);
       if (seen.has(item.id)) fail(`${path}.id`, 'duplicates another custom symbol');
       seen.add(item.id); text(item.name, `${path}.name`); text(item.dataUrl, `${path}.dataUrl`, true); positive(item.aspect, `${path}.aspect`);
+    }
+  }
+  if (project!.customMaterials !== undefined) {
+    const materials = list(project!, 'customMaterials', 'document');
+    if (materials.length > MAX_CUSTOM_MATERIALS) fail('customMaterials', `must have at most ${MAX_CUSTOM_MATERIALS} entries`);
+    const seen = new Set<string>();
+    for (const [i, item] of materials.entries()) {
+      validateCustomMaterial(item, `customMaterials[${i}]`);
+      if (seen.has(item.id)) fail(`customMaterials[${i}].id`, 'duplicates another material');
+      seen.add(item.id);
     }
   }
   for (const key of ['createdAt', 'updatedAt']) {

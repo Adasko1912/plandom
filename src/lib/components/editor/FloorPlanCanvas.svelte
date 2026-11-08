@@ -25,6 +25,7 @@
   import { hasOpenModal } from '$lib/utils/modalDialog';
   import { focusInlineEditor } from '$lib/utils/inlineEditorFocus';
   import ContextMenu from './ContextMenu.svelte';
+  import { reviewMode, reviewPins } from '$lib/stores/review';
   import { roomPresets, placePreset } from '$lib/utils/roomPresets';
   import { roomTemplates, placeRoomTemplate } from '$lib/utils/roomTemplates';
   import { openingDropTarget } from '$lib/utils/openingDrop';
@@ -62,6 +63,8 @@
   // Events and subscriptions coalesce into one frame; no idle polling.
   let drawing: ReturnType<typeof createDrawScheduler> | undefined;
   function markDirty() { drawing?.invalidate(); }
+  // Review links show the plan read-only; pins can change while the plan stays the same.
+  $effect(() => { $reviewPins; $reviewMode; markDirty(); });
   onDestroy(locale.subscribe(() => markDirty()));
   function getCS(): CanvasState { return { ctx, width, height, zoom, camX, camY }; }
   // Sync zoom with shared store
@@ -1731,12 +1734,40 @@
       ctx.restore();
     }
 
+    drawReviewPins();
+
     // Rulers (drawn last, on top of everything)
     drawRulers();
 
     // Mini-map
     drawMinimap();
 
+  }
+
+  function drawReviewPins() {
+    const floorId = currentFloor?.id ?? null;
+    const pins = $reviewPins.filter(p => p.floorId === floorId || p.floorId === null && floorId === get(currentProject)?.floors[0]?.id);
+    if (!pins.length) return;
+    ctx.save();
+    ctx.font = 'bold 12px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (const pin of pins) {
+      const p = worldToScreen(pin.x, pin.y);
+      const r = pin.active ? 14 : 11;
+      ctx.beginPath();
+      ctx.moveTo(p.x, p.y);
+      ctx.arc(p.x, p.y - r - 6, r, Math.PI * 0.75, Math.PI * 0.25);
+      ctx.closePath();
+      ctx.fillStyle = pin.resolved ? '#16a34a' : pin.active ? '#dc2626' : '#f59e0b';
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 2;
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText(pin.label, p.x, p.y - r - 6);
+    }
+    ctx.restore();
   }
 
   /** True while the integrated elevation view covers the canvas area */
@@ -1895,7 +1926,7 @@
 
     // Clipboard image paste handler — only if no internal plan clipboard
     function handlePaste(e: ClipboardEvent) {
-      if (!e.clipboardData) return;
+      if (!e.clipboardData || get(reviewMode)) return;
       if (clipboard && clipboard.ids.length > 0) return; // internal clipboard takes priority
       const files = e.clipboardData.files;
       for (let i = 0; i < files.length; i++) {
@@ -2200,6 +2231,18 @@
     selectionPress = null;
     canvasGestureActive = true;
     canvasPressPosition = { x: e.clientX, y: e.clientY };
+    if ($reviewMode) {
+      if (e.button === 0 && $reviewMode.armed && !spaceDown) {
+        const rect = canvas.getBoundingClientRect();
+        canvasGestureActive = false;
+        $reviewMode.onPick?.(screenToWorld(e.clientX - rect.left, e.clientY - rect.top), currentFloor?.id ?? null);
+        return;
+      }
+      isPanning = true;
+      panStartX = e.clientX;
+      panStartY = e.clientY;
+      return;
+    }
     if (e.button === 0 && e.shiftKey && currentTool === 'select' && currentFloor && !spaceDown && !$panMode) {
       const rect = canvas.getBoundingClientRect();
       const wp = screenToWorld(e.clientX - rect.left, e.clientY - rect.top);
@@ -2664,6 +2707,7 @@
   }
 
   function onDblClick(e: MouseEvent) {
+    if ($reviewMode) return;
     const rect = canvas.getBoundingClientRect();
     const sx = e.clientX - rect.left;
     const sy = e.clientY - rect.top;
@@ -2749,6 +2793,15 @@
     markDirty();
     const rect = canvas.getBoundingClientRect();
     mousePos = screenToWorld(e.clientX - rect.left, e.clientY - rect.top);
+    if ($reviewMode) {
+      if (isPanning) {
+        camX -= (e.clientX - panStartX) / zoom;
+        camY -= (e.clientY - panStartY) / zoom;
+        panStartX = e.clientX;
+        panStartY = e.clientY;
+      }
+      return;
+    }
 
     if ((draggingFurnitureId || draggingHandle) && !furnitureGestureStarted) {
       // Treat small pointer movement during a click as selection, not a snapped move.
@@ -3307,7 +3360,7 @@
   }
 
   function onKeyDown(e: KeyboardEvent) {
-    if (hasOpenModal()) return;
+    if (hasOpenModal() || $reviewMode) return;
     if (e.target === canvas && (e.key === 'ContextMenu' || (e.key === 'F10' && e.shiftKey))) {
       e.preventDefault();
       openKeyboardContextMenu();
@@ -3535,6 +3588,7 @@
   }
 
   function onDragOver(e: DragEvent) {
+    if ($reviewMode) return;
     if (e.dataTransfer?.types.includes('application/o3d-type')) {
       e.preventDefault();
       if (e.dataTransfer) e.dataTransfer.dropEffect = 'copy';
@@ -3553,6 +3607,7 @@
 
   function onDrop(e: DragEvent) {
     e.preventDefault();
+    if ($reviewMode) return;
     dragPreview = null;
     const itemType = e.dataTransfer?.getData('application/o3d-type');
     const itemId = e.dataTransfer?.getData('application/o3d-id');
@@ -3650,6 +3705,7 @@
 
   function onContextMenu(e: MouseEvent) {
     e.preventDefault();
+    if ($reviewMode) return;
 
     // Keep right-click measurement available alongside clicks and taps.
     if (measuring) {
@@ -3866,6 +3922,7 @@
   }
 
   let cursorStyle = $derived(
+    $reviewMode ? ($reviewMode.armed ? 'crosshair' : 'grab') :
     spaceDown || isPanning || $panMode || (shiftDown && currentTool === 'select') ? 'grab' :
     pickingElevation ? 'crosshair' :
     draggingFurnitureId ? 'move' :
@@ -3923,6 +3980,12 @@
     <div role="status" class="absolute top-3 left-1/2 -translate-x-1/2 z-30 bg-slate-800/90 text-white text-xs font-medium px-3.5 py-1.5 rounded-full shadow-lg pointer-events-none flex items-center gap-1.5">
       <span aria-hidden="true">🚪</span>
       <span>{$t(joinHint)}</span>
+    </div>
+  {/if}
+  {#if isCalibrating}
+    <div role="status" class="absolute top-3 left-1/2 -translate-x-1/2 z-30 bg-slate-800/90 text-white text-xs font-medium px-3.5 py-1.5 rounded-full shadow-lg pointer-events-none flex items-center gap-1.5">
+      <span aria-hidden="true">📏</span>
+      <span>{$t(calPoints.length === 0 ? 'planImport.calibrateFirst' : 'planImport.calibrateSecond')}</span>
     </div>
   {/if}
   <!-- Inline room name editor -->
@@ -4023,7 +4086,7 @@
     />
   {/if}
   <!-- Empty state hint -->
-  {#if currentFloor && !hasPlanContent(currentFloor) && !(layerVis.floorBelow && floorBelow && hasPlanContent(floorBelow))}
+  {#if !$reviewMode && currentFloor && !hasPlanContent(currentFloor) && !(layerVis.floorBelow && floorBelow && hasPlanContent(floorBelow))}
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <div class="text-center opacity-60">
         <div class="text-5xl mb-3">🏠</div>

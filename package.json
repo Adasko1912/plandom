@@ -46,9 +46,11 @@
 		"vitest": "^5.0.5"
 	},
 	"dependencies": {
+		"@supabase/supabase-js": "2.118.0",
 		"dxf-writer": "^1.18.4",
 		"jspdf": "^4.2.1",
 		"jszip": "^3.10.1",
+		"pdfjs-dist": "6.4.299",
 		"svg-pathdata": "6.0.3",
 		"three-gpu-pathtracer": "0.0.24",
 		"three-mesh-bvh": "0.9.10"

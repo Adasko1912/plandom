@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { enableAIRender } from '$lib/features';
+  import { enableAIRender, enableAISettings } from '$lib/features';
   import { onDestroy } from 'svelte';
   import { locale, t, type Locale, type TranslationKey } from '$lib/i18n';
   import { modalDialog } from '$lib/utils/modalDialog';
@@ -113,7 +113,7 @@
           {$t('settings.tabAppearance')}
           {#if activeTab === 'appearance'}<div class="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-700 dark:bg-slate-300 rounded-t"></div>{/if}
         </button>
-        {#if enableAIRender}
+        {#if enableAISettings}
         <button
           class="px-4 py-2 text-sm font-medium transition-colors relative {activeTab === 'ai' ? 'text-slate-800 dark:text-slate-200' : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'}"
           onclick={() => activeTab = 'ai'}
@@ -306,8 +306,10 @@
               </div>
             </div>
           </div>
-        {:else if enableAIRender && activeTab === 'ai'}
+        {:else if enableAISettings && activeTab === 'ai'}
           <div class="space-y-4">
+            <p class="text-xs text-gray-500 dark:text-gray-400">{$t('settings.aiUses')}</p>
+            {#if enableAIRender}
             <div>
               <span class="text-sm font-medium text-gray-700 dark:text-gray-300 block mb-1">{$t('settings.geminiApiKey')}</span>
               <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">{$t('settings.geminiApiKeyDesc')}</p>
@@ -355,6 +357,7 @@
                 <li>{$t('settings.copyPasteAbove')}</li>
               </ol>
             </div>
+            {/if}
 
             <OpenAISettings />
           </div>
