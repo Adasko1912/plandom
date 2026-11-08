@@ -20,6 +20,9 @@ export default defineConfig({
     viewport: { width: 1440, height: 900 },
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
+    // The offline service worker would answer same-origin requests before page.route();
+    // only pwa.spec.ts turns it on.
+    serviceWorkers: 'block',
   },
   projects: [
     {

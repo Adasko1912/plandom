@@ -1,0 +1,24 @@
+{
+  "id": "./",
+  "name": "PlanDom — projektowanie domu i wnętrz",
+  "short_name": "PlanDom",
+  "description": "Rzuty, wnętrza i widok 3D domu w przeglądarce.",
+  "lang": "pl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "background_color": "#f8f9fa",
+  "theme_color": "#1e293b",
+  "categories": ["design", "productivity", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Edytor", "short_name": "Edytor", "url": "./editor", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
