@@ -1,4 +1,4 @@
-import { marketModelFiles } from './furnitureCatalogMarket';
+import { marketModelFiles } from './furnitureCatalogMarket.ts';
 
 const MODEL_FILES: Record<string, string> = {
   ...marketModelFiles,

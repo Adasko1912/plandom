@@ -1,5 +1,5 @@
 import type { FurnitureItem } from '$lib/models/types';
-import { marketFurniture } from './furnitureCatalogMarket';
+import { marketFurniture } from './furnitureCatalogMarket.ts';
 
 export interface FurnitureDef {
   id: string;
