@@ -165,8 +165,17 @@ function withStore<T>(mode: IDBTransactionMode, action: (store: IDBObjectStore) 
   });
 }
 
-export const storeProductFile = (file: Blob) => withStore('readwrite', store => store.put(file, KEY));
-export const loadStoredProductFile = () => withStore<Blob | undefined>('readonly', store => store.get(KEY));
+/** Safari's engine can refuse a file picked from disk, so the bytes are kept instead. */
+export async function storeProductFile(file: Blob) {
+  const bytes = await file.arrayBuffer();
+  return withStore('readwrite', store => store.put(bytes, KEY));
+}
+
+export async function loadStoredProductFile() {
+  const stored = await withStore<ArrayBuffer | undefined>('readonly', store => store.get(KEY));
+  return stored && new Blob([stored]);
+}
+
 export const removeStoredProductFile = () => withStore('readwrite', store => store.delete(KEY));
 
 export const productCatalog = writable<ProductCatalog | null>(null);
