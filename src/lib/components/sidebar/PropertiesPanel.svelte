@@ -17,6 +17,7 @@
   import { openingOnWall } from '$lib/utils/wallProfiles';
   import { getEntourageDef } from '$lib/utils/entourageCatalog';
   import { floorMaterials, wallColors } from '$lib/utils/materials';
+  import { floorTextureFiles, wallTextureFiles } from '$lib/utils/textureFiles';
   import CustomMaterialPicker from '$lib/components/materials/CustomMaterialPicker.svelte';
   import { customMaterialKey } from '$lib/utils/customMaterialRegistry';
   import { getCatalogItem } from '$lib/utils/furnitureCatalog';
@@ -339,27 +340,18 @@
     return match ? match.id : 'custom';
   });
 
-  const floorTexPaths: Record<string, string> = {
-    'light-oak': catalogAssetUrl(`/textures/floor-light-oak.webp`), 'walnut': catalogAssetUrl(`/textures/floor-walnut.webp`),
-    'bamboo': catalogAssetUrl(`/textures/floor-bamboo.webp`), 'laminate': catalogAssetUrl(`/textures/floor-laminate.webp`),
-    'ceramic-white': catalogAssetUrl(`/textures/floor-tile-white.webp`), 'ceramic-gray': catalogAssetUrl(`/textures/floor-tile-gray.webp`),
-    'porcelain': catalogAssetUrl(`/textures/floor-porcelain.webp`),
-    'marble-white': catalogAssetUrl(`/textures/floor-marble-white.webp`), 'marble-dark': catalogAssetUrl(`/textures/floor-marble-dark.webp`),
-    'carpet-beige': catalogAssetUrl(`/textures/floor-carpet-beige.webp`), 'carpet-gray': catalogAssetUrl(`/textures/floor-carpet-gray.webp`),
-    'concrete': catalogAssetUrl(`/textures/floor-concrete.webp`), 'slate': catalogAssetUrl(`/textures/floor-slate.webp`),
-    'vinyl': catalogAssetUrl(`/textures/floor-vinyl.webp`),
-  };
-  const wallTexPaths: Record<string, string> = {
-    'red-brick': catalogAssetUrl(`/textures/brick.webp`), 'exposed-brick': catalogAssetUrl(`/textures/exposed-brick.webp`),
-    'stone': catalogAssetUrl(`/textures/stone.webp`), 'wood-panel': catalogAssetUrl(`/textures/wood-panel.webp`),
-    'concrete-block': catalogAssetUrl(`/textures/concrete.webp`), 'subway-tile': catalogAssetUrl(`/textures/subway-tile.webp`),
-  };
+  const texturePaths = (files: Readonly<Record<string, string>>): Record<string, string> =>
+    Object.fromEntries(Object.entries(files).map(([id, file]) => [id, catalogAssetUrl(`/textures/${file}`)]));
+  const floorTexPaths = texturePaths(floorTextureFiles);
+  const wallTexPaths = texturePaths(wallTextureFiles);
   const textureGroups = [
     { label: '🎨 Plain', ids: ['none'] },
-    { label: '🪵 Wood', ids: ['light-oak', 'walnut', 'bamboo', 'laminate'] },
-    { label: '🔲 Tile', ids: ['ceramic-white', 'ceramic-gray', 'porcelain', 'vinyl'] },
-    { label: '🪨 Stone', ids: ['marble-white', 'marble-dark', 'concrete', 'slate'] },
-    { label: '🧶 Carpet', ids: ['carpet-beige', 'carpet-gray'] },
+    { label: '🪵 Wood', ids: ['light-oak', 'walnut', 'bamboo', 'laminate', 'oak-natural', 'oak-honey', 'oak-bleached', 'oak-grey', 'oak-rustic', 'oak-dark', 'plank-aged', 'vinyl-oak', 'vinyl-dark'] },
+    { label: '🪵 Parquet', ids: ['herringbone', 'chevron', 'parquet-classic', 'parquet-light', 'parquet-dark'] },
+    { label: '🔲 Tile', ids: ['ceramic-white', 'ceramic-gray', 'porcelain', 'vinyl', 'gres-white', 'gres-beige', 'gres-anthracite', 'gres-concrete', 'tile-checker', 'tile-marble-checker', 'tile-patchwork'] },
+    { label: '🔷 Mosaic', ids: ['hex-white', 'hex-dark', 'mosaic-white', 'mosaic-blue', 'terrazzo-light', 'terrazzo-grey'] },
+    { label: '🪨 Stone', ids: ['marble-white', 'marble-dark', 'concrete', 'slate', 'travertine', 'marble-cream', 'marble-black'] },
+    { label: '🧶 Carpet', ids: ['carpet-beige', 'carpet-gray', 'carpet-cream', 'carpet-navy'] },
   ];
 
   let hasSelection = $derived(!!selectedWall || !!selectedDoor || !!selectedWindow || !!selectedFurniture || !!selectedRoom || !!selectedStair || !!selectedColumn || !!selectedTextAnnotation || !!selectedEntourage || (!is3D && hasBgImage));
@@ -471,7 +463,7 @@
           <div class="space-y-2">
             <span class="text-xs text-gray-500">{$t('furnitureProperties.color')}</span>
             <div class="grid grid-cols-6 gap-1.5">
-              {#each wallColors as wc}
+              {#each wallColors.filter(wc => !wc.finishOnly) as wc}
                 <button
                   class="w-7 h-7 rounded-md border-2 hover:border-gray-300 transition-colors {sideColor === wc.color ? 'border-blue-500 ring-1 ring-blue-200' : 'border-gray-200'}"
                   style="background-color: {wc.color}"
@@ -507,7 +499,7 @@
           <div class="space-y-2">
             <span class="text-xs text-gray-500">{$t('furnitureProperties.color')}</span>
             <div class="grid grid-cols-6 gap-1.5">
-              {#each wallColors as wc}
+              {#each wallColors.filter(wc => !wc.finishOnly) as wc}
                 <button
                   class="w-7 h-7 rounded-md border-2 hover:border-gray-300 transition-colors {sideColor === wc.color ? 'border-blue-500 ring-1 ring-blue-200' : 'border-gray-200'}"
                   style="background-color: {wc.color}"

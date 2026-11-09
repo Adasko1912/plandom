@@ -19,6 +19,8 @@ export const catalogCategoryLabels: Record<string, TranslationKey> = {
   "Garage": "catalogCategories.garage",
   "Garden Structures": "catalogCategories.gardenStructures",
   "Imported": "catalogCategories.imported",
+  "Hallway": "catalogCategories.hallway",
+  "Kids Room": "catalogCategories.kids",
   "Outdoor Lighting": "catalogCategories.outdoorLighting",
   "Paths & Lawns": "catalogCategories.pathsLawns",
   "Pool & Spa": "catalogCategories.poolSpa"

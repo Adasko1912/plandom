@@ -386,6 +386,8 @@
     'Kitchen': '#f87171',
     'Bathroom': '#93c5fd',
     'Office': '#34d399',
+    'Hallway': '#a16207',
+    'Kids Room': '#f472b6',
     'Dining': '#f59e0b',
     'Decor': '#c2956b',
     'Lighting': '#fbbf24',

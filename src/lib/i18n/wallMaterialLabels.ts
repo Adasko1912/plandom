@@ -21,5 +21,21 @@ export const wallMaterialLabels: Record<string, TranslationKey> = {
   "stone": "wallMaterial.stone",
   "wood-panel": "wallMaterial.wood-panel",
   "concrete-block": "wallMaterial.concrete-block",
-  "subway-tile": "wallMaterial.subway-tile"
+  "subway-tile": "wallMaterial.subway-tile",
+  "white-brick": "wallMaterial.white-brick",
+  "cream-brick": "wallMaterial.cream-brick",
+  "stone-cladding": "wallMaterial.stone-cladding",
+  "sandstone-wall": "wallMaterial.sandstone-wall",
+  "wood-cladding": "wallMaterial.wood-cladding",
+  "plaster-white": "wallMaterial.plaster-white",
+  "arch-concrete": "wallMaterial.arch-concrete",
+  "wall-metro-white": "wallMaterial.wall-metro-white",
+  "wall-zellige-green": "wallMaterial.wall-zellige-green",
+  "wall-tile-teal": "wallMaterial.wall-tile-teal",
+  "wall-marble-white": "wallMaterial.wall-marble-white",
+  "wall-onyx": "wallMaterial.wall-onyx",
+  "wall-gres-white": "wallMaterial.wall-gres-white",
+  "wall-gres-beige": "wallMaterial.wall-gres-beige",
+  "wall-gres-anthracite": "wallMaterial.wall-gres-anthracite",
+  "wall-terrazzo": "wallMaterial.wall-terrazzo"
 };

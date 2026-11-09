@@ -44,7 +44,7 @@ export function fitFurnitureModel(model: THREE.Group, def: FurnitureDef) {
   model.updateMatrixWorld(true);
   bounds.setFromObject(model);
   const center = bounds.getCenter(new THREE.Vector3());
-  model.position.sub(new THREE.Vector3(center.x, bounds.min.y, center.z));
+  model.position.sub(new THREE.Vector3(center.x, bounds.min.y - (def.mountHeight ?? 0), center.z));
   model.updateMatrixWorld(true);
 }
 

@@ -32,7 +32,9 @@ export const floorGroupLabels: Record<string, TranslationKey> = {
   "🪵 Wood": "floorGroupLabel.1",
   "🔲 Tile": "floorGroupLabel.2",
   "🪨 Stone": "floorGroupLabel.3",
-  "🧶 Carpet": "floorGroupLabel.4"
+  "🧶 Carpet": "floorGroupLabel.4",
+  "🪵 Parquet": "floorGroupLabel.5",
+  "🔷 Mosaic": "floorGroupLabel.6"
 };
 
 export const floorMaterialLabels: Record<string, TranslationKey> = {
@@ -50,5 +52,37 @@ export const floorMaterialLabels: Record<string, TranslationKey> = {
   "carpet-gray": "floorMaterialLabel.carpet-gray",
   "concrete": "floorMaterialLabel.concrete",
   "slate": "floorMaterialLabel.slate",
-  "vinyl": "floorMaterialLabel.vinyl"
+  "vinyl": "floorMaterialLabel.vinyl",
+  "oak-natural": "floorMaterialLabel.oak-natural",
+  "oak-honey": "floorMaterialLabel.oak-honey",
+  "oak-bleached": "floorMaterialLabel.oak-bleached",
+  "oak-grey": "floorMaterialLabel.oak-grey",
+  "oak-rustic": "floorMaterialLabel.oak-rustic",
+  "oak-dark": "floorMaterialLabel.oak-dark",
+  "plank-aged": "floorMaterialLabel.plank-aged",
+  "vinyl-oak": "floorMaterialLabel.vinyl-oak",
+  "vinyl-dark": "floorMaterialLabel.vinyl-dark",
+  "herringbone": "floorMaterialLabel.herringbone",
+  "chevron": "floorMaterialLabel.chevron",
+  "parquet-classic": "floorMaterialLabel.parquet-classic",
+  "parquet-light": "floorMaterialLabel.parquet-light",
+  "parquet-dark": "floorMaterialLabel.parquet-dark",
+  "gres-white": "floorMaterialLabel.gres-white",
+  "gres-beige": "floorMaterialLabel.gres-beige",
+  "gres-anthracite": "floorMaterialLabel.gres-anthracite",
+  "gres-concrete": "floorMaterialLabel.gres-concrete",
+  "tile-checker": "floorMaterialLabel.tile-checker",
+  "tile-marble-checker": "floorMaterialLabel.tile-marble-checker",
+  "tile-patchwork": "floorMaterialLabel.tile-patchwork",
+  "hex-white": "floorMaterialLabel.hex-white",
+  "hex-dark": "floorMaterialLabel.hex-dark",
+  "mosaic-white": "floorMaterialLabel.mosaic-white",
+  "mosaic-blue": "floorMaterialLabel.mosaic-blue",
+  "terrazzo-light": "floorMaterialLabel.terrazzo-light",
+  "terrazzo-grey": "floorMaterialLabel.terrazzo-grey",
+  "travertine": "floorMaterialLabel.travertine",
+  "marble-cream": "floorMaterialLabel.marble-cream",
+  "marble-black": "floorMaterialLabel.marble-black",
+  "carpet-cream": "floorMaterialLabel.carpet-cream",
+  "carpet-navy": "floorMaterialLabel.carpet-navy"
 };
