@@ -380,6 +380,15 @@ export function addFurniture(catalogId: string, position: Point): string {
   return id;
 }
 
+/** Adds a shop product with the dimensions the designer entered, as one undo step. */
+export function addProductFurniture(catalogId: string, position: Point, size: { width: number; depth: number; height: number }, note: string): string {
+  const id = uid();
+  mutate((f) => {
+    f.furniture.push({ id, catalogId, position, rotation: 0, scale: { x: 1, y: 1, z: 1 }, ...size, details: { note } });
+  }, `Added ${catalogId}`);
+  return id;
+}
+
 /** Snapshot the current state before a drag begins (call once at drag start) */
 export function beginDrag(description = 'Moved element') {
   snapshot(description);
