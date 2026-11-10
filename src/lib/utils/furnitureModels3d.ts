@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import type { FurnitureDef } from './furnitureCatalog';
+import { marketBases } from './furnitureCatalogMarket';
 
 // Helper to darken/lighten colors
 function adjustColor(color: string, factor: number): number {
@@ -36,7 +37,21 @@ export function createFurnitureModel(catalogId: string, def: FurnitureDef): THRE
   const d = depth; 
   const h = height;
 
-  switch (catalogId) {
+  switch (marketBases[catalogId] ?? catalogId) {
+    case 'sofa_u': {
+      const seat = createMaterial(color), run = (x: number, z: number, sw: number, sd: number) => {
+        const mesh = new THREE.Mesh(new THREE.BoxGeometry(sw, h * 0.5, sd), seat);
+        mesh.position.set(x, h * 0.25, z);
+        group.add(mesh);
+      };
+      run(0, -d * 0.275, w, d * 0.45);
+      run(-w * 0.37, d * 0.225, w * 0.26, d * 0.55);
+      run(w * 0.37, d * 0.225, w * 0.26, d * 0.55);
+      const back = new THREE.Mesh(new THREE.BoxGeometry(w, h, d * 0.14), new THREE.MeshStandardMaterial({ color: adjustColor(color, 0.85), roughness: 0.7, metalness: 0.1 }));
+      back.position.set(0, h / 2, -d * 0.43);
+      group.add(back);
+      break;
+    }
     case 'stairs': {
       // Scan/import preview; building stairs remain separately editable.
       const steps = 10;
@@ -303,6 +318,7 @@ export function createFurnitureModel(catalogId: string, def: FurnitureDef): THRE
       break;
   }
 
+  if (def.mountHeight) group.position.y = def.mountHeight;
   enableShadows(group);
   return group;
 }

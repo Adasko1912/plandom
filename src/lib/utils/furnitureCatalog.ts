@@ -1,4 +1,5 @@
 import type { FurnitureItem } from '$lib/models/types';
+import { marketFurniture } from './furnitureCatalogMarket.ts';
 
 export interface FurnitureDef {
   id: string;
@@ -12,6 +13,10 @@ export interface FurnitureDef {
   height: number;
   /** If set, this is a 2D-only architectural symbol (not rendered in 3D) */
   symbol?: boolean;
+  /** Catalog item supplying the 2D symbol and the 3D placeholder of this size variant. */
+  base?: string;
+  /** Height of the underside above the floor in cm, for wall-hung items. */
+  mountHeight?: number;
 }
 
 export const furnitureCatalog: FurnitureDef[] = [
@@ -245,6 +250,8 @@ export const furnitureCatalog: FurnitureDef[] = [
   { id: 'sym_water_heater', name: 'Water Heater', category: 'Plumbing', icon: '🔥', color: '#ef4444', width: 20, depth: 20, height: 0, symbol: true },
   { id: 'sym_washer_hookup', name: 'Washer Hookup', category: 'Plumbing', icon: '🧺', color: '#0ea5e9', width: 15, depth: 15, height: 0, symbol: true },
   { id: 'sym_gas_line', name: 'Gas Line', category: 'Plumbing', icon: '⛽', color: '#f59e0b', width: 15, depth: 15, height: 0, symbol: true },
+
+  ...marketFurniture,
 ];
 
 // Import previews stay out of the placement catalog and need no model downloads.

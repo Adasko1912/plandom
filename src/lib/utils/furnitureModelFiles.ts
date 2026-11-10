@@ -1,4 +1,7 @@
+import { marketModelFiles } from './furnitureCatalogMarket.ts';
+
 const MODEL_FILES: Record<string, string> = {
+  ...marketModelFiles,
   sofa: 'loungeDesignSofa',
   loveseat: 'loungeDesignSofa',
   chair: 'loungeChair',

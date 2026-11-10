@@ -9,6 +9,17 @@
   "provenanceNote": "Matched models have exact official archive byte evidence; embedded generator metadata alone is not attribution.",
   "textures": [
     {
+      "path": "static/textures/arch-concrete.webp",
+      "bytes": 162968,
+      "sha256": "99abf02b568ed83c2b2b265442f2ff6ceedfb878fcc211a163096ad54cfc3c5b",
+      "materialIds": [
+        "arch-concrete"
+      ],
+      "sourceAssetId": "Concrete036",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
       "path": "static/textures/brick.webp",
       "bytes": 116184,
       "sha256": "180239e3db92a22848076a8a038c49aa85c2a9e83da5a4c8540a6f622a965c27",
@@ -27,6 +38,17 @@
         "concrete-block"
       ],
       "sourceAssetId": "Concrete048",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/cream-brick.webp",
+      "bytes": 57610,
+      "sha256": "c2f7667e04362f195468a6ae41bb4c1a151481afb8ec28380b28ada2f53e38ff",
+      "materialIds": [
+        "cream-brick"
+      ],
+      "sourceAssetId": "Bricks105",
       "creditsPath": "static/textures/CREDITS.md",
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
@@ -64,6 +86,17 @@
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
     {
+      "path": "static/textures/floor-carpet-cream.webp",
+      "bytes": 114188,
+      "sha256": "e334e1a15c7d9a3109f344c45656a3335dc425189bc9a2eb4a2ff361b9790359",
+      "materialIds": [
+        "carpet-cream"
+      ],
+      "sourceAssetId": "Carpet016",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
       "path": "static/textures/floor-carpet-gray.webp",
       "bytes": 270190,
       "sha256": "33d47f5509b93475821ed8aefd8e4b8e74d2d972e43d2e4d738ad13e5a73cf19",
@@ -75,6 +108,28 @@
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
     {
+      "path": "static/textures/floor-carpet-navy.webp",
+      "bytes": 417466,
+      "sha256": "61c5ed497b4fd851995165283dfe9cfcd2615249580dde0e3f9042a419b7532b",
+      "materialIds": [
+        "carpet-navy"
+      ],
+      "sourceAssetId": "Carpet012",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-chevron.webp",
+      "bytes": 123994,
+      "sha256": "a5a2a35ee66a66d7b35e3a9ba1cf07b327bb29de23c5577638509baad0c1e429",
+      "materialIds": [
+        "chevron"
+      ],
+      "sourceAssetId": "WoodFloor052",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
       "path": "static/textures/floor-concrete.webp",
       "bytes": 27686,
       "sha256": "a76f7d954a9b7c0e6c93603e312971b556a64c1daf6c4ce3a6f6cb2a6cc3701d",
@@ -82,6 +137,86 @@
         "concrete"
       ],
       "sourceAssetId": "Concrete034",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-gres-anthracite.webp",
+      "bytes": 191064,
+      "sha256": "4027635c85ffbd0403398a63f8c96c86d33ff1e813c1df0e66c5f0bd595bf37c",
+      "materialIds": [
+        "wall-gres-anthracite",
+        "gres-anthracite"
+      ],
+      "sourceAssetId": "Tiles138",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-gres-beige.webp",
+      "bytes": 80458,
+      "sha256": "0a7f65856bb5f8a780d13354f2f83c3036c9471bb628273d2a84a433c422ff35",
+      "materialIds": [
+        "wall-gres-beige",
+        "gres-beige"
+      ],
+      "sourceAssetId": "Tiles139",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-gres-concrete.webp",
+      "bytes": 59168,
+      "sha256": "6e4f6fb5cddaed66d6af5da45a47b748b8fde0ab034a077a29a75e12aa432ab4",
+      "materialIds": [
+        "gres-concrete"
+      ],
+      "sourceAssetId": "Concrete031",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-gres-white.webp",
+      "bytes": 117108,
+      "sha256": "a8493e21a26011c99dda46a4920497a55eac53891eb06bc4e293c806dd0eff9b",
+      "materialIds": [
+        "wall-gres-white",
+        "gres-white"
+      ],
+      "sourceAssetId": "Tiles141",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-herringbone.webp",
+      "bytes": 154052,
+      "sha256": "46814220afccb5431b3e6091e045e983a6688d54d357f01f2ff7a336e09c4212",
+      "materialIds": [
+        "herringbone"
+      ],
+      "sourceAssetId": "WoodFloor057",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-hex-dark.webp",
+      "bytes": 148934,
+      "sha256": "60b846cf4df9201170be557799d513188aa158d755199d76ddd9dcd71d0387a6",
+      "materialIds": [
+        "hex-dark"
+      ],
+      "sourceAssetId": "Tiles072",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-hex-white.webp",
+      "bytes": 85096,
+      "sha256": "8d1765285ad8fdcda0ccbf50570491fa8f520eb7a4897ec8bedbc6257243b72d",
+      "materialIds": [
+        "hex-white"
+      ],
+      "sourceAssetId": "Tiles071",
       "creditsPath": "static/textures/CREDITS.md",
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
@@ -108,6 +243,28 @@
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
     {
+      "path": "static/textures/floor-marble-black.webp",
+      "bytes": 299546,
+      "sha256": "8be3eb1d6b661af554cc7f778f381e1905eb434b3020ca873623bcda98f4c1f8",
+      "materialIds": [
+        "marble-black"
+      ],
+      "sourceAssetId": "Marble023",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-marble-cream.webp",
+      "bytes": 150796,
+      "sha256": "f906713d1045003df357abac83dfdfbfb84aa2d6efc5f70efe1d3139b917d5f4",
+      "materialIds": [
+        "marble-cream"
+      ],
+      "sourceAssetId": "Marble014",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
       "path": "static/textures/floor-marble-dark.webp",
       "bytes": 237054,
       "sha256": "a8ba0f961a5f9a52c3e2700e9544c15a1f3b21d26b6713e7e3616e2319de5fa9",
@@ -126,6 +283,138 @@
         "marble-white"
       ],
       "sourceAssetId": "Marble012",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-mosaic-blue.webp",
+      "bytes": 69952,
+      "sha256": "0262aacabeac75a503da728d660603b3ad4a1a98e0e67d8c354b2a0bc643e0c1",
+      "materialIds": [
+        "mosaic-blue"
+      ],
+      "sourceAssetId": "Tiles035",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-mosaic-white.webp",
+      "bytes": 31412,
+      "sha256": "dec0ca9eab1186890e04d17c134cb6098b9c6174f0b9fd9101b41e4651d050ce",
+      "materialIds": [
+        "mosaic-white"
+      ],
+      "sourceAssetId": "Tiles133A",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-oak-bleached.webp",
+      "bytes": 70362,
+      "sha256": "ba8deab8c5bc4515d7d126357ecbd3568a1f37b2332925e5ca25b55a5f41b787",
+      "materialIds": [
+        "oak-bleached"
+      ],
+      "sourceAssetId": "WoodFloor039",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-oak-dark.webp",
+      "bytes": 76264,
+      "sha256": "ddc3d4c5ffc8f80f1da6867958e63ed56281aac192a8fb2fc8d866716784148c",
+      "materialIds": [
+        "oak-dark"
+      ],
+      "sourceAssetId": "WoodFloor011",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-oak-grey.webp",
+      "bytes": 111090,
+      "sha256": "6c41ebd36bc92d887dbdc8addc5edb095f0da675f56bbe3cd05e1196aa15f48c",
+      "materialIds": [
+        "oak-grey"
+      ],
+      "sourceAssetId": "WoodFloor010",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-oak-honey.webp",
+      "bytes": 57668,
+      "sha256": "68146ba3e5443bc1541cab160b57f76da99851caa910e80ee7e9e081f609177b",
+      "materialIds": [
+        "oak-honey"
+      ],
+      "sourceAssetId": "WoodFloor064",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-oak-natural.webp",
+      "bytes": 83794,
+      "sha256": "b8c39c7f02ed2deeb2ad35dbecb24dee652a56ca256334a26576a94837e2e0d9",
+      "materialIds": [
+        "oak-natural"
+      ],
+      "sourceAssetId": "WoodFloor051",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-oak-rustic.webp",
+      "bytes": 123846,
+      "sha256": "38e0e9a4d32a403c0e7f8e91a7eff3c1349b412981ad76e565e445fc7ae9afa5",
+      "materialIds": [
+        "oak-rustic"
+      ],
+      "sourceAssetId": "WoodFloor034",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-parquet-classic.webp",
+      "bytes": 91026,
+      "sha256": "1dc74fe7da9af4f3db249b0e01ab090657ebf55a708451444912752a3ecb95f7",
+      "materialIds": [
+        "parquet-classic"
+      ],
+      "sourceAssetId": "WoodFloor054",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-parquet-dark.webp",
+      "bytes": 60598,
+      "sha256": "f30c22f54942eb4cec67830e9928fca1b140cb1a16c38339402a6e1cae69724a",
+      "materialIds": [
+        "parquet-dark"
+      ],
+      "sourceAssetId": "WoodFloor070",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-parquet-light.webp",
+      "bytes": 62030,
+      "sha256": "de01e0036e6c0afc487578ecb38612345f06483ed214352a4b3d8a9ac08ea5d9",
+      "materialIds": [
+        "parquet-light"
+      ],
+      "sourceAssetId": "WoodFloor071",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-plank-aged.webp",
+      "bytes": 153618,
+      "sha256": "66460ff54dbd62a668b8d95d0dc50ca7d8c607d544df64b2a975c3eecd6a0057",
+      "materialIds": [
+        "plank-aged"
+      ],
+      "sourceAssetId": "WoodFloor041",
       "creditsPath": "static/textures/CREDITS.md",
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
@@ -152,6 +441,40 @@
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
     {
+      "path": "static/textures/floor-terrazzo-grey.webp",
+      "bytes": 337732,
+      "sha256": "af75380cfd79f1569bf5899331df68f22181fa52c8ee5e91fdc01173078f25a8",
+      "materialIds": [
+        "terrazzo-grey"
+      ],
+      "sourceAssetId": "Terrazzo005",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-terrazzo-light.webp",
+      "bytes": 122924,
+      "sha256": "901a5d582dc559dea54c89f1adfad3cf6a4506a627fed5689b47b93cca6f2da4",
+      "materialIds": [
+        "wall-terrazzo",
+        "terrazzo-light"
+      ],
+      "sourceAssetId": "Terrazzo013",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-tile-checker.webp",
+      "bytes": 53298,
+      "sha256": "37f4cfc85af7b81e60450be5ddd8145b8be1322a6906f84bdf94d72982f35303",
+      "materialIds": [
+        "tile-checker"
+      ],
+      "sourceAssetId": "Tiles012",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
       "path": "static/textures/floor-tile-gray.webp",
       "bytes": 305504,
       "sha256": "f9ab0a77102eb16fa1739d3457c7479161df4c21dc00c939ccbe423006ae63bd",
@@ -163,6 +486,28 @@
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
     {
+      "path": "static/textures/floor-tile-marble-checker.webp",
+      "bytes": 119050,
+      "sha256": "e34f092bf19102b3dd871d0189498690b2737cecef47e0330ee783e19a0a043f",
+      "materialIds": [
+        "tile-marble-checker"
+      ],
+      "sourceAssetId": "Tiles074",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-tile-patchwork.webp",
+      "bytes": 218648,
+      "sha256": "8c1b20a999f454ce3afa09c150a399f82a02f95621fa00144af3c07f13d74c35",
+      "materialIds": [
+        "tile-patchwork"
+      ],
+      "sourceAssetId": "Tiles131",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
       "path": "static/textures/floor-tile-white.webp",
       "bytes": 119050,
       "sha256": "e34f092bf19102b3dd871d0189498690b2737cecef47e0330ee783e19a0a043f",
@@ -170,6 +515,39 @@
         "ceramic-white"
       ],
       "sourceAssetId": "Tiles074",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-travertine.webp",
+      "bytes": 66376,
+      "sha256": "ca2a65a2fc1ddf6fd4992e65b36986ae7d76751d142dec7c821afab24fe3e0bb",
+      "materialIds": [
+        "travertine"
+      ],
+      "sourceAssetId": "Travertine009",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-vinyl-dark.webp",
+      "bytes": 45908,
+      "sha256": "e967d3272f8dda58aba5880ce02187037afde141d609a9a874bf8e7b7b26a23c",
+      "materialIds": [
+        "vinyl-dark"
+      ],
+      "sourceAssetId": "WoodFloor005",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/floor-vinyl-oak.webp",
+      "bytes": 54550,
+      "sha256": "7ad4f15fe433ca6226f965476ab9b8953f518268481cb7900d5553cf7e16436e",
+      "materialIds": [
+        "vinyl-oak"
+      ],
+      "sourceAssetId": "WoodFloor062",
       "creditsPath": "static/textures/CREDITS.md",
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
@@ -196,6 +574,39 @@
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
     {
+      "path": "static/textures/plaster-white.webp",
+      "bytes": 57190,
+      "sha256": "17ba601d9070a5b56af4412b093178d887b69218a5ca5fb86ba00e2cfaeea4a1",
+      "materialIds": [
+        "plaster-white"
+      ],
+      "sourceAssetId": "Plaster001",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/sandstone-wall.webp",
+      "bytes": 114748,
+      "sha256": "b746cbdfb61cfb264cea877a01effee1cd55ce1c727a11746309dafa913bb7fd",
+      "materialIds": [
+        "sandstone-wall"
+      ],
+      "sourceAssetId": "Bricks106A",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/stone-cladding.webp",
+      "bytes": 143654,
+      "sha256": "1c323e81d1fc7a7201989c91c84ff39278df64326e56df8c132e2351b66c7fdf",
+      "materialIds": [
+        "stone-cladding"
+      ],
+      "sourceAssetId": "Bricks075A",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
       "path": "static/textures/stone.webp",
       "bytes": 269744,
       "sha256": "ea0ed6e2118d95d60520a009294b3c378eaa5593d99acf1052fce05cce6b093f",
@@ -214,6 +625,83 @@
         "subway-tile"
       ],
       "sourceAssetId": "Tiles093",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/wall-marble-white.webp",
+      "bytes": 231878,
+      "sha256": "4fdf3db3a6f4603fcbe87f54af73b58d4dadb16f01c933af5262b93368fda48e",
+      "materialIds": [
+        "wall-marble-white"
+      ],
+      "sourceAssetId": "Marble012",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/wall-metro-white.webp",
+      "bytes": 23706,
+      "sha256": "d28be848841dd53ab2eeed3375e78d905066584f0995151330e2c3b6265e8885",
+      "materialIds": [
+        "wall-metro-white"
+      ],
+      "sourceAssetId": "Tiles136A",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/wall-onyx.webp",
+      "bytes": 125792,
+      "sha256": "8423d21444c1a5847f53d203de2265db2dbf59ab8c50c3cfe59adcbd3f23c870",
+      "materialIds": [
+        "wall-onyx"
+      ],
+      "sourceAssetId": "Onyx015",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/wall-tile-teal.webp",
+      "bytes": 12834,
+      "sha256": "43f71373119d2a642b22eb97cf76ad3762f25ed0b544c18c04fa3c8bcbc0d33f",
+      "materialIds": [
+        "wall-tile-teal"
+      ],
+      "sourceAssetId": "Tiles029",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/wall-zellige-green.webp",
+      "bytes": 15848,
+      "sha256": "7db9a5d6f514039b8147ac982f0492f7dd2b1ac8ce1b1dd82d53f855aeb48843",
+      "materialIds": [
+        "wall-zellige-green"
+      ],
+      "sourceAssetId": "Tiles032",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/white-brick.webp",
+      "bytes": 127032,
+      "sha256": "6a12c4933915dbc6c5e0f778f7fe9ec31d138606aead827ff0768e6e263e9162",
+      "materialIds": [
+        "white-brick"
+      ],
+      "sourceAssetId": "Bricks060",
+      "creditsPath": "static/textures/CREDITS.md",
+      "provenanceStatus": "documented-locally-not-source-byte-verified"
+    },
+    {
+      "path": "static/textures/wood-cladding.webp",
+      "bytes": 33058,
+      "sha256": "e8fed583b03b3dc92f30a191af31d8b1317ce945c6b54174cd5292262808cb03",
+      "materialIds": [
+        "wood-cladding"
+      ],
+      "sourceAssetId": "WoodSiding008",
       "creditsPath": "static/textures/CREDITS.md",
       "provenanceStatus": "documented-locally-not-source-byte-verified"
     },
@@ -2686,6 +3174,1748 @@
       "dimensionStatus": "catalog-defaults-not-product-measurements",
       "webRepresentation": "2d-symbol",
       "model": null
+    },
+    {
+      "id": "sofa_2",
+      "name": "Sofa 2-seat",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 92,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeDesignSofa"
+    },
+    {
+      "id": "sofa_2_bed",
+      "name": "Sofa bed 2-seat",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 175,
+        "depth": 98,
+        "height": 90
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofa"
+    },
+    {
+      "id": "sofa_3",
+      "name": "Sofa 3-seat",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 220,
+        "depth": 95,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeDesignSofa"
+    },
+    {
+      "id": "sofa_3_bed",
+      "name": "Sofa bed 3-seat",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 235,
+        "depth": 100,
+        "height": 90
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofa"
+    },
+    {
+      "id": "sofa_4",
+      "name": "Sofa 4-seat",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 265,
+        "depth": 100,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofaLong"
+    },
+    {
+      "id": "sofa_chaise",
+      "name": "Sofa with chaise",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 240,
+        "depth": 150,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofaCorner"
+    },
+    {
+      "id": "corner_small",
+      "name": "Small corner sofa",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 230,
+        "depth": 165,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeDesignSofaCorner"
+    },
+    {
+      "id": "corner_medium",
+      "name": "Corner sofa",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 270,
+        "depth": 190,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeDesignSofaCorner"
+    },
+    {
+      "id": "corner_bed",
+      "name": "Corner sofa bed",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 290,
+        "depth": 200,
+        "height": 90
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofaCorner"
+    },
+    {
+      "id": "corner_large",
+      "name": "Large corner sofa",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 320,
+        "depth": 210,
+        "height": 90
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofaCorner"
+    },
+    {
+      "id": "corner_u",
+      "name": "U-shaped sofa",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 340,
+        "depth": 200,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "procedural",
+      "model": null
+    },
+    {
+      "id": "ottoman",
+      "name": "Ottoman",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 60,
+        "height": 45
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofaOttoman"
+    },
+    {
+      "id": "ottoman_large",
+      "name": "Large ottoman",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 70,
+        "height": 45
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeSofaOttoman"
+    },
+    {
+      "id": "armchair_wing",
+      "name": "Wingback armchair",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 85,
+        "height": 105
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeDesignChair"
+    },
+    {
+      "id": "armchair_recliner",
+      "name": "Recliner",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 85,
+        "depth": 95,
+        "height": 105
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "loungeChairRelax"
+    },
+    {
+      "id": "tv_stand_120",
+      "name": "TV stand 120 cm",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 40,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetTelevision"
+    },
+    {
+      "id": "tv_stand_160",
+      "name": "TV stand 160 cm",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 40,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetTelevisionDoors"
+    },
+    {
+      "id": "tv_stand_200",
+      "name": "TV stand 200 cm",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 200,
+        "depth": 42,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetTelevisionDoors"
+    },
+    {
+      "id": "tv_43",
+      "name": "TV 43 inch",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 96,
+        "depth": 8,
+        "height": 60
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "televisionModern"
+    },
+    {
+      "id": "tv_55",
+      "name": "TV 55 inch",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 123,
+        "depth": 8,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "televisionModern"
+    },
+    {
+      "id": "tv_65",
+      "name": "TV 65 inch",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 145,
+        "depth": 8,
+        "height": 87
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "televisionModern"
+    },
+    {
+      "id": "tv_75",
+      "name": "TV 75 inch",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 168,
+        "depth": 8,
+        "height": 100
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "televisionModern"
+    },
+    {
+      "id": "coffee_square",
+      "name": "Square coffee table",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 80,
+        "height": 42
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableCoffeeSquare"
+    },
+    {
+      "id": "coffee_glass",
+      "name": "Glass coffee table",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 110,
+        "depth": 60,
+        "height": 42
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableCoffeeGlass"
+    },
+    {
+      "id": "coffee_glass_square",
+      "name": "Square glass coffee table",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 80,
+        "height": 42
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableCoffeeGlassSquare"
+    },
+    {
+      "id": "side_table_drawers",
+      "name": "Side table with drawers",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 50,
+        "depth": 40,
+        "height": 60
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "sideTableDrawers"
+    },
+    {
+      "id": "shelf_low",
+      "name": "Low bookcase",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 35,
+        "height": 90
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseOpenLow"
+    },
+    {
+      "id": "shelf_tall",
+      "name": "Tall bookcase",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 35,
+        "height": 200
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseOpen"
+    },
+    {
+      "id": "shelf_wide",
+      "name": "Wide bookcase",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 35,
+        "height": 200
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseOpen"
+    },
+    {
+      "id": "display_cabinet",
+      "name": "Display cabinet",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 90,
+        "depth": 40,
+        "height": 200
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseClosedDoors"
+    },
+    {
+      "id": "sideboard",
+      "name": "Sideboard",
+      "category": "Living Room",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 42,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetTelevisionDoors"
+    },
+    {
+      "id": "bed_90",
+      "name": "Bed 90 × 200",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 208,
+        "depth": 98,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedSingle"
+    },
+    {
+      "id": "bed_120",
+      "name": "Bed 120 × 200",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 208,
+        "depth": 128,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedSingle"
+    },
+    {
+      "id": "bed_140",
+      "name": "Bed 140 × 200",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 208,
+        "depth": 148,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedDouble"
+    },
+    {
+      "id": "bed_160",
+      "name": "Bed 160 × 200",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 208,
+        "depth": 168,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedDouble"
+    },
+    {
+      "id": "bed_180",
+      "name": "Bed 180 × 200",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 208,
+        "depth": 188,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedDouble"
+    },
+    {
+      "id": "bed_200",
+      "name": "Bed 200 × 200",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 208,
+        "depth": 208,
+        "height": 50
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedDouble"
+    },
+    {
+      "id": "bed_box_160",
+      "name": "Boxspring bed 160",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 215,
+        "depth": 175,
+        "height": 115
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedDouble"
+    },
+    {
+      "id": "bed_box_180",
+      "name": "Boxspring bed 180",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 215,
+        "depth": 195,
+        "height": 115
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedDouble"
+    },
+    {
+      "id": "bed_bunk",
+      "name": "Bunk bed",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 208,
+        "depth": 98,
+        "height": 165
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedBunk"
+    },
+    {
+      "id": "wardrobe_100",
+      "name": "Wardrobe 100 cm",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 58,
+        "height": 210
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseClosedDoors"
+    },
+    {
+      "id": "wardrobe_150",
+      "name": "Wardrobe 150 cm",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 150,
+        "depth": 58,
+        "height": 210
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseClosedDoors"
+    },
+    {
+      "id": "wardrobe_200",
+      "name": "Sliding wardrobe 200 cm",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 200,
+        "depth": 62,
+        "height": 220
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseClosedDoors"
+    },
+    {
+      "id": "wardrobe_250",
+      "name": "Sliding wardrobe 250 cm",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 250,
+        "depth": 62,
+        "height": 220
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseClosedDoors"
+    },
+    {
+      "id": "dresser_80",
+      "name": "Chest of drawers 80 cm",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 42,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetBedDrawer"
+    },
+    {
+      "id": "dresser_160",
+      "name": "Chest of drawers 160 cm",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 42,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetBedDrawer"
+    },
+    {
+      "id": "nightstand_small",
+      "name": "Small nightstand",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 40,
+        "depth": 35,
+        "height": 45
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetBed"
+    },
+    {
+      "id": "dressing_table",
+      "name": "Dressing table",
+      "category": "Bedroom",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 42,
+        "height": 76
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "desk"
+    },
+    {
+      "id": "kitchen_base_30",
+      "name": "Base unit 30 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 30,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinet"
+    },
+    {
+      "id": "kitchen_base_40",
+      "name": "Base unit 40 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 40,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinet"
+    },
+    {
+      "id": "kitchen_base_60",
+      "name": "Base unit 60 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinet"
+    },
+    {
+      "id": "kitchen_base_80",
+      "name": "Base unit 80 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinet"
+    },
+    {
+      "id": "kitchen_drawer_60",
+      "name": "Drawer unit 60 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetDrawer"
+    },
+    {
+      "id": "kitchen_drawer_80",
+      "name": "Drawer unit 80 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetDrawer"
+    },
+    {
+      "id": "kitchen_corner",
+      "name": "Corner base unit",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 90,
+        "depth": 90,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetCornerInner"
+    },
+    {
+      "id": "kitchen_upper_40",
+      "name": "Wall unit 40 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 40,
+        "depth": 32,
+        "height": 72
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetUpper"
+    },
+    {
+      "id": "kitchen_upper_60",
+      "name": "Wall unit 60 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 32,
+        "height": 72
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetUpper"
+    },
+    {
+      "id": "kitchen_upper_80",
+      "name": "Wall unit 80 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 32,
+        "height": 72
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetUpperDouble"
+    },
+    {
+      "id": "kitchen_upper_low",
+      "name": "Low wall unit 60 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 32,
+        "height": 36
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetUpperLow"
+    },
+    {
+      "id": "kitchen_upper_corner",
+      "name": "Corner wall unit",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 60,
+        "height": 72
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetUpperCorner"
+    },
+    {
+      "id": "kitchen_tall",
+      "name": "Tall unit 60 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 60,
+        "height": 215
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseClosedDoors"
+    },
+    {
+      "id": "kitchen_island",
+      "name": "Kitchen island",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 180,
+        "depth": 90,
+        "height": 90
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenBar"
+    },
+    {
+      "id": "kitchen_bar",
+      "name": "Breakfast bar",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 45,
+        "height": 105
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenBarEnd"
+    },
+    {
+      "id": "fridge_60",
+      "name": "Fridge 60 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 65,
+        "height": 185
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenFridge"
+    },
+    {
+      "id": "fridge_builtin",
+      "name": "Built-in fridge",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 56,
+        "height": 178
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenFridgeBuiltIn"
+    },
+    {
+      "id": "fridge_sbs",
+      "name": "Side-by-side fridge",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 91,
+        "depth": 72,
+        "height": 178
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenFridgeLarge"
+    },
+    {
+      "id": "fridge_small",
+      "name": "Under-counter fridge",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 55,
+        "depth": 58,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenFridgeSmall"
+    },
+    {
+      "id": "cooker_50",
+      "name": "Freestanding cooker 50 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 50,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenStove"
+    },
+    {
+      "id": "dishwasher_45",
+      "name": "Dishwasher 45 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 45,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCabinetDrawer"
+    },
+    {
+      "id": "hood_60",
+      "name": "Cooker hood 60 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 50,
+        "height": 60
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "hoodModern"
+    },
+    {
+      "id": "hood_90",
+      "name": "Cooker hood 90 cm",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 90,
+        "depth": 50,
+        "height": 60
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "hoodLarge"
+    },
+    {
+      "id": "microwave",
+      "name": "Microwave",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 50,
+        "depth": 38,
+        "height": 30
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenMicrowave"
+    },
+    {
+      "id": "coffee_machine",
+      "name": "Coffee machine",
+      "category": "Kitchen",
+      "dimensionsCm": {
+        "width": 25,
+        "depth": 40,
+        "height": 35
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "kitchenCoffeeMachine"
+    },
+    {
+      "id": "table_80",
+      "name": "Table 80 × 80",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 80,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "table"
+    },
+    {
+      "id": "table_140",
+      "name": "Table 140 × 80",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 140,
+        "depth": 80,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "table"
+    },
+    {
+      "id": "table_160",
+      "name": "Table 160 × 90",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 90,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableCross"
+    },
+    {
+      "id": "table_200",
+      "name": "Table 200 × 100",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 200,
+        "depth": 100,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableCross"
+    },
+    {
+      "id": "table_round_100",
+      "name": "Round table 100 cm",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 100,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableRound"
+    },
+    {
+      "id": "table_round_120",
+      "name": "Round table 120 cm",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 120,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableRound"
+    },
+    {
+      "id": "table_glass",
+      "name": "Glass table",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 140,
+        "depth": 80,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "tableGlass"
+    },
+    {
+      "id": "chair_padded",
+      "name": "Upholstered chair",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 46,
+        "depth": 52,
+        "height": 92
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "chairCushion"
+    },
+    {
+      "id": "chair_modern",
+      "name": "Modern chair",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 46,
+        "depth": 52,
+        "height": 88
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "chairModernCushion"
+    },
+    {
+      "id": "chair_frame",
+      "name": "Frame chair",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 46,
+        "depth": 52,
+        "height": 88
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "chairModernFrameCushion"
+    },
+    {
+      "id": "chair_round",
+      "name": "Tub chair",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 55,
+        "depth": 55,
+        "height": 82
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "chairRounded"
+    },
+    {
+      "id": "bar_stool",
+      "name": "Bar stool",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 40,
+        "depth": 40,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "stoolBar"
+    },
+    {
+      "id": "bar_stool_square",
+      "name": "Square bar stool",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 40,
+        "depth": 40,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "stoolBarSquare"
+    },
+    {
+      "id": "bench_dining",
+      "name": "Dining bench",
+      "category": "Dining",
+      "dimensionsCm": {
+        "width": 140,
+        "depth": 38,
+        "height": 46
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "benchCushion"
+    },
+    {
+      "id": "toilet_wall",
+      "name": "Wall-hung toilet",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 37,
+        "depth": 54,
+        "height": 40
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "toiletSquare"
+    },
+    {
+      "id": "bathtub_150",
+      "name": "Bathtub 150 cm",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 150,
+        "depth": 70,
+        "height": 58
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathtub"
+    },
+    {
+      "id": "bathtub_160",
+      "name": "Bathtub 160 cm",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 70,
+        "height": 58
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathtub"
+    },
+    {
+      "id": "bathtub_180",
+      "name": "Bathtub 180 cm",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 180,
+        "depth": 80,
+        "height": 60
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathtub"
+    },
+    {
+      "id": "bathtub_corner",
+      "name": "Corner bathtub",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 150,
+        "depth": 150,
+        "height": 60
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathtub"
+    },
+    {
+      "id": "shower_80",
+      "name": "Shower 80 × 80",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 80,
+        "height": 195
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "shower"
+    },
+    {
+      "id": "shower_90_round",
+      "name": "Quadrant shower 90",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 90,
+        "depth": 90,
+        "height": 195
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "showerRound"
+    },
+    {
+      "id": "shower_120",
+      "name": "Shower 120 × 80",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 80,
+        "height": 195
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "shower"
+    },
+    {
+      "id": "shower_walkin",
+      "name": "Walk-in shower",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 90,
+        "height": 200
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "shower"
+    },
+    {
+      "id": "vanity_60",
+      "name": "Vanity unit 60 cm",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 46,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathroomSinkSquare"
+    },
+    {
+      "id": "vanity_80",
+      "name": "Vanity unit 80 cm",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 46,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathroomSinkSquare"
+    },
+    {
+      "id": "vanity_100",
+      "name": "Vanity unit 100 cm",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 46,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathroomSinkSquare"
+    },
+    {
+      "id": "bathroom_tall",
+      "name": "Tall bathroom cabinet",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 35,
+        "depth": 32,
+        "height": 170
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathroomCabinet"
+    },
+    {
+      "id": "bathroom_drawers",
+      "name": "Bathroom drawer unit",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 40,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathroomCabinetDrawer"
+    },
+    {
+      "id": "bathroom_mirror",
+      "name": "Bathroom mirror",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 5,
+        "height": 70
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bathroomMirror"
+    },
+    {
+      "id": "washer_front",
+      "name": "Washing machine",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 55,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "washer"
+    },
+    {
+      "id": "washer_slim",
+      "name": "Slim washing machine",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 40,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "washer"
+    },
+    {
+      "id": "dryer",
+      "name": "Tumble dryer",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 60,
+        "height": 85
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "dryer"
+    },
+    {
+      "id": "towel_radiator",
+      "name": "Towel radiator",
+      "category": "Bathroom",
+      "dimensionsCm": {
+        "width": 50,
+        "depth": 8,
+        "height": 120
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "procedural",
+      "model": null
+    },
+    {
+      "id": "desk_100",
+      "name": "Desk 100 cm",
+      "category": "Office",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 60,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "desk"
+    },
+    {
+      "id": "desk_120",
+      "name": "Desk 120 cm",
+      "category": "Office",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 60,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "desk"
+    },
+    {
+      "id": "desk_160",
+      "name": "Desk 160 cm",
+      "category": "Office",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 80,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "desk"
+    },
+    {
+      "id": "desk_corner",
+      "name": "Corner desk",
+      "category": "Office",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 120,
+        "height": 75
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "deskCorner"
+    },
+    {
+      "id": "monitor",
+      "name": "Monitor",
+      "category": "Office",
+      "dimensionsCm": {
+        "width": 62,
+        "depth": 20,
+        "height": 45
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "computerScreen"
+    },
+    {
+      "id": "shoe_cabinet",
+      "name": "Shoe cabinet",
+      "category": "Hallway",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 32,
+        "height": 100
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetBedDrawer"
+    },
+    {
+      "id": "hall_wardrobe",
+      "name": "Hallway wardrobe",
+      "category": "Hallway",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 40,
+        "height": 200
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseClosedDoors"
+    },
+    {
+      "id": "hall_bench",
+      "name": "Hallway bench",
+      "category": "Hallway",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 35,
+        "height": 46
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "benchCushionLow"
+    },
+    {
+      "id": "coat_rack",
+      "name": "Wall coat rack",
+      "category": "Hallway",
+      "dimensionsCm": {
+        "width": 80,
+        "depth": 10,
+        "height": 20
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "coatRack"
+    },
+    {
+      "id": "coat_stand",
+      "name": "Coat stand",
+      "category": "Hallway",
+      "dimensionsCm": {
+        "width": 45,
+        "depth": 45,
+        "height": 180
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "coatRackStanding"
+    },
+    {
+      "id": "doormat",
+      "name": "Doormat",
+      "category": "Hallway",
+      "dimensionsCm": {
+        "width": 60,
+        "depth": 40,
+        "height": 1
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "rugDoormat"
+    },
+    {
+      "id": "crib",
+      "name": "Cot 120 × 60",
+      "category": "Kids Room",
+      "dimensionsCm": {
+        "width": 125,
+        "depth": 66,
+        "height": 90
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedSingle"
+    },
+    {
+      "id": "bed_kids",
+      "name": "Child bed 160 × 80",
+      "category": "Kids Room",
+      "dimensionsCm": {
+        "width": 168,
+        "depth": 88,
+        "height": 60
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedSingle"
+    },
+    {
+      "id": "kids_bunk",
+      "name": "Child bunk bed",
+      "category": "Kids Room",
+      "dimensionsCm": {
+        "width": 168,
+        "depth": 88,
+        "height": 150
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bedBunk"
+    },
+    {
+      "id": "changing_table",
+      "name": "Changing table",
+      "category": "Kids Room",
+      "dimensionsCm": {
+        "width": 90,
+        "depth": 55,
+        "height": 95
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "cabinetBedDrawer"
+    },
+    {
+      "id": "kids_desk",
+      "name": "Child desk",
+      "category": "Kids Room",
+      "dimensionsCm": {
+        "width": 100,
+        "depth": 55,
+        "height": 70
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "desk"
+    },
+    {
+      "id": "toy_shelf",
+      "name": "Toy shelf",
+      "category": "Kids Room",
+      "dimensionsCm": {
+        "width": 90,
+        "depth": 35,
+        "height": 100
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "bookcaseOpenLow"
+    },
+    {
+      "id": "rug_120",
+      "name": "Rug 120 × 170",
+      "category": "Decor",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 170,
+        "height": 1
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "rugRectangle"
+    },
+    {
+      "id": "rug_160",
+      "name": "Rug 160 × 230",
+      "category": "Decor",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 230,
+        "height": 1
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "rugRectangle"
+    },
+    {
+      "id": "rug_200",
+      "name": "Rug 200 × 290",
+      "category": "Decor",
+      "dimensionsCm": {
+        "width": 200,
+        "depth": 290,
+        "height": 1
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "rugRectangle"
+    },
+    {
+      "id": "rug_square",
+      "name": "Square rug 200 cm",
+      "category": "Decor",
+      "dimensionsCm": {
+        "width": 200,
+        "depth": 200,
+        "height": 1
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "rugSquare"
+    },
+    {
+      "id": "rug_round_120",
+      "name": "Round rug 120 cm",
+      "category": "Decor",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 120,
+        "height": 1
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "rugRound"
+    },
+    {
+      "id": "rug_round_160",
+      "name": "Round rug 160 cm",
+      "category": "Decor",
+      "dimensionsCm": {
+        "width": 160,
+        "depth": 160,
+        "height": 1
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "rugRound"
+    },
+    {
+      "id": "lamp_floor_round",
+      "name": "Round floor lamp",
+      "category": "Lighting",
+      "dimensionsCm": {
+        "width": 40,
+        "depth": 40,
+        "height": 160
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "lampRoundFloor"
+    },
+    {
+      "id": "lamp_floor_square",
+      "name": "Square floor lamp",
+      "category": "Lighting",
+      "dimensionsCm": {
+        "width": 40,
+        "depth": 40,
+        "height": 160
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "lampSquareFloor"
+    },
+    {
+      "id": "lamp_table_round",
+      "name": "Round table lamp",
+      "category": "Lighting",
+      "dimensionsCm": {
+        "width": 25,
+        "depth": 25,
+        "height": 45
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "lampRoundTable"
+    },
+    {
+      "id": "lamp_table_square",
+      "name": "Square table lamp",
+      "category": "Lighting",
+      "dimensionsCm": {
+        "width": 25,
+        "depth": 25,
+        "height": 45
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "lampSquareTable"
+    },
+    {
+      "id": "ceiling_fan",
+      "name": "Ceiling fan",
+      "category": "Lighting",
+      "dimensionsCm": {
+        "width": 120,
+        "depth": 120,
+        "height": 40
+      },
+      "dimensionStatus": "catalog-defaults-not-product-measurements",
+      "webRepresentation": "glb-with-procedural-fallback",
+      "model": "ceilingFan"
     }
   ],
   "models": {
@@ -2697,7 +4927,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "bathroom_tall"
+      ]
     },
     "bathroomCabinetDrawer": {
       "path": "static/models/bathroomCabinetDrawer.glb",
@@ -2707,7 +4939,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "bathroom_drawers"
+      ]
     },
     "bathroomMirror": {
       "path": "static/models/bathroomMirror.glb",
@@ -2717,7 +4951,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "bathroom_mirror"
+      ]
     },
     "bathroomSink": {
       "path": "static/models/bathroomSink.glb",
@@ -2739,7 +4975,11 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "vanity_60",
+        "vanity_80",
+        "vanity_100"
+      ]
     },
     "bathtub": {
       "path": "static/models/bathtub.glb",
@@ -2750,7 +4990,11 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "bathtub"
+        "bathtub",
+        "bathtub_150",
+        "bathtub_160",
+        "bathtub_180",
+        "bathtub_corner"
       ]
     },
     "bear": {
@@ -2771,7 +5015,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "bed_bunk",
+        "kids_bunk"
+      ]
     },
     "bedDouble": {
       "path": "static/models/bedDouble.glb",
@@ -2782,7 +5029,13 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "bed_queen"
+        "bed_queen",
+        "bed_140",
+        "bed_160",
+        "bed_180",
+        "bed_200",
+        "bed_box_160",
+        "bed_box_180"
       ]
     },
     "bedSingle": {
@@ -2794,7 +5047,11 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "bed_twin"
+        "bed_twin",
+        "bed_90",
+        "bed_120",
+        "crib",
+        "bed_kids"
       ]
     },
     "bench": {
@@ -2815,7 +5072,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "bench_dining"
+      ]
     },
     "benchCushionLow": {
       "path": "static/models/benchCushionLow.glb",
@@ -2825,7 +5084,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "hall_bench"
+      ]
     },
     "bookcaseClosed": {
       "path": "static/models/bookcaseClosed.glb",
@@ -2848,7 +5109,14 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "wardrobe"
+        "wardrobe",
+        "display_cabinet",
+        "wardrobe_100",
+        "wardrobe_150",
+        "wardrobe_200",
+        "wardrobe_250",
+        "kitchen_tall",
+        "hall_wardrobe"
       ]
     },
     "bookcaseClosedWide": {
@@ -2870,7 +5138,9 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "bookshelf"
+        "bookshelf",
+        "shelf_tall",
+        "shelf_wide"
       ]
     },
     "bookcaseOpenLow": {
@@ -2881,7 +5151,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "shelf_low",
+        "toy_shelf"
+      ]
     },
     "books": {
       "path": "static/models/books.glb",
@@ -2901,7 +5174,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "nightstand_small"
+      ]
     },
     "cabinetBedDrawer": {
       "path": "static/models/cabinetBedDrawer.glb",
@@ -2912,7 +5187,11 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "dresser"
+        "dresser",
+        "dresser_80",
+        "dresser_160",
+        "shoe_cabinet",
+        "changing_table"
       ]
     },
     "cabinetBedDrawerTable": {
@@ -2936,7 +5215,8 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "tv_stand"
+        "tv_stand",
+        "tv_stand_120"
       ]
     },
     "cabinetTelevisionDoors": {
@@ -2947,7 +5227,11 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "tv_stand_160",
+        "tv_stand_200",
+        "sideboard"
+      ]
     },
     "cardboardBoxClosed": {
       "path": "static/models/cardboardBoxClosed.glb",
@@ -2977,7 +5261,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "ceiling_fan"
+      ]
     },
     "chair": {
       "path": "static/models/chair.glb",
@@ -2999,7 +5285,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "chair_padded"
+      ]
     },
     "chairDesk": {
       "path": "static/models/chairDesk.glb",
@@ -3021,7 +5309,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "chair_modern"
+      ]
     },
     "chairModernFrameCushion": {
       "path": "static/models/chairModernFrameCushion.glb",
@@ -3031,7 +5321,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "chair_frame"
+      ]
     },
     "chairRounded": {
       "path": "static/models/chairRounded.glb",
@@ -3041,7 +5333,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "chair_round"
+      ]
     },
     "coatRack": {
       "path": "static/models/coatRack.glb",
@@ -3051,7 +5345,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "coat_rack"
+      ]
     },
     "coatRackStanding": {
       "path": "static/models/coatRackStanding.glb",
@@ -3061,7 +5357,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "coat_stand"
+      ]
     },
     "computerKeyboard": {
       "path": "static/models/computerKeyboard.glb",
@@ -3091,7 +5389,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "monitor"
+      ]
     },
     "desk": {
       "path": "static/models/desk.glb",
@@ -3101,7 +5401,13 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "dressing_table",
+        "desk_100",
+        "desk_120",
+        "desk_160",
+        "kids_desk"
+      ]
     },
     "deskCorner": {
       "path": "static/models/deskCorner.glb",
@@ -3111,7 +5417,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "desk_corner"
+      ]
     },
     "doorway": {
       "path": "static/models/doorway.glb",
@@ -3151,7 +5459,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "dryer"
+      ]
     },
     "floorCorner": {
       "path": "static/models/floorCorner.glb",
@@ -3201,7 +5511,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "hood_90"
+      ]
     },
     "hoodModern": {
       "path": "static/models/hoodModern.glb",
@@ -3211,7 +5523,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "hood_60"
+      ]
     },
     "kitchenBar": {
       "path": "static/models/kitchenBar.glb",
@@ -3221,7 +5535,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "kitchen_island"
+      ]
     },
     "kitchenBarEnd": {
       "path": "static/models/kitchenBarEnd.glb",
@@ -3231,7 +5547,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "kitchen_bar"
+      ]
     },
     "kitchenBlender": {
       "path": "static/models/kitchenBlender.glb",
@@ -3252,7 +5570,11 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "counter"
+        "counter",
+        "kitchen_base_30",
+        "kitchen_base_40",
+        "kitchen_base_60",
+        "kitchen_base_80"
       ]
     },
     "kitchenCabinetCornerInner": {
@@ -3263,7 +5585,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "kitchen_corner"
+      ]
     },
     "kitchenCabinetCornerRound": {
       "path": "static/models/kitchenCabinetCornerRound.glb",
@@ -3284,7 +5608,10 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "dishwasher"
+        "dishwasher",
+        "kitchen_drawer_60",
+        "kitchen_drawer_80",
+        "dishwasher_45"
       ]
     },
     "kitchenCabinetUpper": {
@@ -3295,7 +5622,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "kitchen_upper_40",
+        "kitchen_upper_60"
+      ]
     },
     "kitchenCabinetUpperCorner": {
       "path": "static/models/kitchenCabinetUpperCorner.glb",
@@ -3305,7 +5635,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "kitchen_upper_corner"
+      ]
     },
     "kitchenCabinetUpperDouble": {
       "path": "static/models/kitchenCabinetUpperDouble.glb",
@@ -3315,7 +5647,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "kitchen_upper_80"
+      ]
     },
     "kitchenCabinetUpperLow": {
       "path": "static/models/kitchenCabinetUpperLow.glb",
@@ -3325,7 +5659,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "kitchen_upper_low"
+      ]
     },
     "kitchenCoffeeMachine": {
       "path": "static/models/kitchenCoffeeMachine.glb",
@@ -3335,7 +5671,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "coffee_machine"
+      ]
     },
     "kitchenFridge": {
       "path": "static/models/kitchenFridge.glb",
@@ -3345,7 +5683,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "fridge_60"
+      ]
     },
     "kitchenFridgeBuiltIn": {
       "path": "static/models/kitchenFridgeBuiltIn.glb",
@@ -3355,7 +5695,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "fridge_builtin"
+      ]
     },
     "kitchenFridgeLarge": {
       "path": "static/models/kitchenFridgeLarge.glb",
@@ -3366,7 +5708,8 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "fridge"
+        "fridge",
+        "fridge_sbs"
       ]
     },
     "kitchenFridgeSmall": {
@@ -3377,7 +5720,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "fridge_small"
+      ]
     },
     "kitchenMicrowave": {
       "path": "static/models/kitchenMicrowave.glb",
@@ -3387,7 +5732,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "microwave"
+      ]
     },
     "kitchenSink": {
       "path": "static/models/kitchenSink.glb",
@@ -3410,7 +5757,8 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "stove"
+        "stove",
+        "cooker_50"
       ]
     },
     "kitchenStoveElectric": {
@@ -3433,7 +5781,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "lamp_floor_round"
+      ]
     },
     "lampRoundTable": {
       "path": "static/models/lampRoundTable.glb",
@@ -3443,7 +5793,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "lamp_table_round"
+      ]
     },
     "lampSquareCeiling": {
       "path": "static/models/lampSquareCeiling.glb",
@@ -3463,7 +5815,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "lamp_floor_square"
+      ]
     },
     "lampSquareTable": {
       "path": "static/models/lampSquareTable.glb",
@@ -3473,7 +5827,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "lamp_table_square"
+      ]
     },
     "lampWall": {
       "path": "static/models/lampWall.glb",
@@ -3515,7 +5871,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "armchair_recliner"
+      ]
     },
     "loungeDesignChair": {
       "path": "static/models/loungeDesignChair.glb",
@@ -3525,7 +5883,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "armchair_wing"
+      ]
     },
     "loungeDesignSofa": {
       "path": "static/models/loungeDesignSofa.glb",
@@ -3537,7 +5897,9 @@
       "sourcePack": "furniture-kit",
       "catalogIds": [
         "sofa",
-        "loveseat"
+        "loveseat",
+        "sofa_2",
+        "sofa_3"
       ]
     },
     "loungeDesignSofaCorner": {
@@ -3548,7 +5910,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "corner_small",
+        "corner_medium"
+      ]
     },
     "loungeSofa": {
       "path": "static/models/loungeSofa.glb",
@@ -3558,7 +5923,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "sofa_2_bed",
+        "sofa_3_bed"
+      ]
     },
     "loungeSofaCorner": {
       "path": "static/models/loungeSofaCorner.glb",
@@ -3568,7 +5936,11 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "sofa_chaise",
+        "corner_bed",
+        "corner_large"
+      ]
     },
     "loungeSofaLong": {
       "path": "static/models/loungeSofaLong.glb",
@@ -3578,7 +5950,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "sofa_4"
+      ]
     },
     "loungeSofaOttoman": {
       "path": "static/models/loungeSofaOttoman.glb",
@@ -3588,7 +5962,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "ottoman",
+        "ottoman_large"
+      ]
     },
     "outdoor_cactus_short": {
       "path": "static/models/outdoor_cactus_short.glb",
@@ -4470,7 +6847,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "doormat"
+      ]
     },
     "rugRectangle": {
       "path": "static/models/rugRectangle.glb",
@@ -4480,7 +6859,11 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "rug_120",
+        "rug_160",
+        "rug_200"
+      ]
     },
     "rugRound": {
       "path": "static/models/rugRound.glb",
@@ -4490,7 +6873,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "rug_round_120",
+        "rug_round_160"
+      ]
     },
     "rugRounded": {
       "path": "static/models/rugRounded.glb",
@@ -4510,7 +6896,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "rug_square"
+      ]
     },
     "shower": {
       "path": "static/models/shower.glb",
@@ -4521,7 +6909,10 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "shower"
+        "shower",
+        "shower_80",
+        "shower_120",
+        "shower_walkin"
       ]
     },
     "showerRound": {
@@ -4532,7 +6923,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "shower_90_round"
+      ]
     },
     "sideTable": {
       "path": "static/models/sideTable.glb",
@@ -4554,7 +6947,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "side_table_drawers"
+      ]
     },
     "speaker": {
       "path": "static/models/speaker.glb",
@@ -4624,7 +7019,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "bar_stool"
+      ]
     },
     "stoolBarSquare": {
       "path": "static/models/stoolBarSquare.glb",
@@ -4634,7 +7031,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "bar_stool_square"
+      ]
     },
     "table": {
       "path": "static/models/table.glb",
@@ -4644,7 +7043,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "table_80",
+        "table_140"
+      ]
     },
     "tableCloth": {
       "path": "static/models/tableCloth.glb",
@@ -4676,7 +7078,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "coffee_glass"
+      ]
     },
     "tableCoffeeGlassSquare": {
       "path": "static/models/tableCoffeeGlassSquare.glb",
@@ -4686,7 +7090,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "coffee_glass_square"
+      ]
     },
     "tableCoffeeSquare": {
       "path": "static/models/tableCoffeeSquare.glb",
@@ -4696,7 +7102,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "coffee_square"
+      ]
     },
     "tableCross": {
       "path": "static/models/tableCross.glb",
@@ -4709,7 +7117,9 @@
       "catalogIds": [
         "desk",
         "dining_table",
-        "table"
+        "table",
+        "table_160",
+        "table_200"
       ]
     },
     "tableCrossCloth": {
@@ -4730,7 +7140,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "table_glass"
+      ]
     },
     "tableRound": {
       "path": "static/models/tableRound.glb",
@@ -4740,7 +7152,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "table_round_100",
+        "table_round_120"
+      ]
     },
     "televisionAntenna": {
       "path": "static/models/televisionAntenna.glb",
@@ -4761,7 +7176,11 @@
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
       "catalogIds": [
-        "television"
+        "television",
+        "tv_43",
+        "tv_55",
+        "tv_65",
+        "tv_75"
       ]
     },
     "televisionVintage": {
@@ -4804,7 +7223,9 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "toilet_wall"
+      ]
     },
     "trashcan": {
       "path": "static/models/trashcan.glb",
@@ -4904,7 +7325,10 @@
       "embeddedCopyright": null,
       "provenanceStatus": "official-archive-byte-match",
       "sourcePack": "furniture-kit",
-      "catalogIds": []
+      "catalogIds": [
+        "washer_front",
+        "washer_slim"
+      ]
     },
     "washerDryerStacked": {
       "path": "static/models/washerDryerStacked.glb",

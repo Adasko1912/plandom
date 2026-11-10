@@ -25,7 +25,7 @@ test('Portuguese 3D furniture placement preserves catalog identity and undo', as
   await viewer.getByRole('button', { name: 'Quarto', exact: true }).click();
   await expect(living).toHaveAttribute('aria-pressed', 'false');
   await living.click();
-  await viewer.getByRole('button', { name: /Poltrona/ }).click();
+  await viewer.getByRole('button', { name: /Poltrona/ }).first().click();
   await expect(viewer.getByText('🪑 Clique no piso para posicionar Poltrona • Esc para cancelar', { exact: true })).toBeVisible();
   const bounds = (await canvas.boundingBox())!;
   await canvas.click({ position: { x: bounds.width * .6, y: bounds.height * .65 } });

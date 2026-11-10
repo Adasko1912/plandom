@@ -1,9 +1,11 @@
 import type { FurnitureItem, Project } from '$lib/models/types';
 import type { Locale } from './index';
 import { getCatalogItem } from '$lib/utils/furnitureCatalog';
+import { marketPolishNames, marketPortugueseNames } from '$lib/utils/furnitureCatalogMarket';
 
 // Display names only: catalog IDs and saved project data remain unchanged.
 export const portugueseFurnitureNames: Readonly<Record<string, string>> = {
+  ...marketPortugueseNames,
   "sofa": "Sofá",
   "loveseat": "Sofá de dois lugares",
   "chair": "Poltrona",
@@ -198,6 +200,7 @@ export const portugueseFurnitureNames: Readonly<Record<string, string>> = {
 };
 
 export const polishFurnitureNames: Readonly<Record<string, string>> = {
+  ...marketPolishNames,
   "sofa": "Sofa",
   "loveseat": "Sofa dwuosobowa",
   "chair": "Fotel",

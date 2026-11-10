@@ -28,8 +28,10 @@
   import type { TranslationKey } from '$lib/i18n';
   import HouseProjectImportDialog from '$lib/components/import/HouseProjectImportDialog.svelte';
   import RoomFromPhotosDialog from '$lib/components/import/RoomFromPhotosDialog.svelte';
+  import ProductsDialog from '$lib/components/products/ProductsDialog.svelte';
   let planImportOpen = $state(false);
   let roomFromPhotosOpen = $state(false);
+  let productsOpen = $state(false);
   import { openMaterialLibrary } from '$lib/stores/materialLibrary';
 
   const wallPresetLabels: Record<WallPreset, TranslationKey> = {
@@ -386,6 +388,8 @@
     'Kitchen': '#f87171',
     'Bathroom': '#93c5fd',
     'Office': '#34d399',
+    'Hallway': '#a16207',
+    'Kids Room': '#f472b6',
     'Dining': '#f59e0b',
     'Decor': '#c2956b',
     'Lighting': '#fbbf24',
@@ -566,6 +570,16 @@
           <div class="text-left">
             <div class="font-medium">{$t('materials.button')}</div>
             <div class="text-xs text-gray-400">{$t('materials.buttonHelp')}</div>
+          </div>
+        </button>
+        <button
+          class="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors hover:bg-gray-50 text-gray-700"
+          onclick={() => productsOpen = true}
+        >
+          <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-lg" aria-hidden="true">🛒</div>
+          <div class="text-left">
+            <div class="font-medium">{$t('products.button')}</div>
+            <div class="text-xs text-gray-400">{$t('products.buttonHelp')}</div>
           </div>
         </button>
         <button
@@ -950,3 +964,4 @@
 
 <HouseProjectImportDialog bind:open={planImportOpen} />
 <RoomFromPhotosDialog bind:open={roomFromPhotosOpen} />
+<ProductsDialog bind:open={productsOpen} />

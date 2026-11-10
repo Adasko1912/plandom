@@ -1,3 +1,4 @@
+import { marketBases } from './furnitureCatalogMarket';
 /**
  * Architectural top-down furniture renderers for 2D canvas.
  * Each function draws within a normalized rect: (-w/2, -d/2) to (w/2, d/2)
@@ -49,6 +50,32 @@ const drawSofa: DrawFn = (ctx, w, d, color) => {
   ctx.strokeStyle = color;
   ctx.lineWidth = 0.5;
   ctx.stroke();
+};
+
+const drawCornerSofa: DrawFn = (ctx, w, d, color) => {
+  // L-shape: the long run along the back, the chaise on the right
+  const backD = d * 0.2, seatD = d * 0.55, chaiseW = w * 0.34;
+  ctx.beginPath();
+  ctx.moveTo(-w/2, -d/2); ctx.lineTo(w/2, -d/2); ctx.lineTo(w/2, d/2); ctx.lineTo(w/2 - chaiseW, d/2);
+  ctx.lineTo(w/2 - chaiseW, -d/2 + seatD); ctx.lineTo(-w/2, -d/2 + seatD); ctx.closePath();
+  ctx.fill(); ctx.stroke();
+  ctx.fillStyle = color + '40';
+  roundRect(ctx, -w/2 + 2, -d/2 + backD, w - chaiseW - 2, seatD - backD - 2, 2);
+  ctx.fill(); ctx.stroke();
+  roundRect(ctx, w/2 - chaiseW, -d/2 + backD, chaiseW - 2, d - backD - 2, 2);
+  ctx.fill(); ctx.stroke();
+};
+
+const drawUSofa: DrawFn = (ctx, w, d, color) => {
+  const armW = w * 0.26, backD = d * 0.45;
+  ctx.beginPath();
+  ctx.moveTo(-w/2, -d/2); ctx.lineTo(w/2, -d/2); ctx.lineTo(w/2, d/2); ctx.lineTo(w/2 - armW, d/2);
+  ctx.lineTo(w/2 - armW, -d/2 + backD); ctx.lineTo(-w/2 + armW, -d/2 + backD); ctx.lineTo(-w/2 + armW, d/2);
+  ctx.lineTo(-w/2, d/2); ctx.closePath();
+  ctx.fill(); ctx.stroke();
+  ctx.fillStyle = color + '40';
+  roundRect(ctx, -w/2 + 2, -d/2 + d * 0.16, w - 4, backD - d * 0.16 - 2, 2);
+  ctx.fill(); ctx.stroke();
 };
 
 const drawLoveseat: DrawFn = (ctx, w, d, color) => {
@@ -915,6 +942,8 @@ const iconDrawers: Record<string, DrawFn> = {
     ctx.stroke();
   },
   sofa: drawSofa,
+  sofa_corner: drawCornerSofa,
+  sofa_u: drawUSofa,
   loveseat: drawLoveseat,
   chair: drawChair,
   coffee_table: drawTable,
@@ -1000,7 +1029,7 @@ export function drawFurnitureIcon(
   ctx.strokeStyle = strokeColor;
   ctx.lineWidth = 1;
 
-  const drawer = iconDrawers[catalogId];
+  const drawer = iconDrawers[catalogId] ?? iconDrawers[marketBases[catalogId]];
   if (drawer) {
     drawer(ctx, w, d, color);
   } else {
